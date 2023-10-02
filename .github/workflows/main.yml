@@ -5,6 +5,10 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/expo-alternate-app-icons
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
@@ -19,11 +23,14 @@ jobs:
     needs: test
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+      - run: git fetch --unshallow --tags
       - uses: actions/setup-node@v3
         with:
           node-version: 20
       - run: npm ci
       - env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx auto shipit --dry-run
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx auto shipit

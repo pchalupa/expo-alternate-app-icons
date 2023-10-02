@@ -1,5 +1,5 @@
-# Exclude all top-level hidden directories by convention
 /.*/
+/.*
 
 __mocks__
 __tests__
@@ -9,4 +9,3 @@ __tests__
 /android/src/test/
 /android/build/
 /example/
-/.github/

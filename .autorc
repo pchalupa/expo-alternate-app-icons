@@ -1,4 +1,5 @@
 {
+  "onlyPublishWithReleaseLabel": true,
   "plugins": [
     "npm",
     [

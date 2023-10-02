@@ -10,6 +10,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
+          cache: 'npm'
       - run: npm ci
       - run: yarn lint
 
@@ -29,6 +30,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
+          cache: 'npm'
       - run: npm ci
       - env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

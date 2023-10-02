@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    "npm",
+    [
+      "conventional-commits",
+      {
+        "preset": "angular"
+      }
+    ]
+  ]
+}

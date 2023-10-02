@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "expo-alternate-app-icons-example",
+    "slug": "expo-alternate-app-icons-example",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "expo.modules.alternateappicons.example"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "expo.modules.alternateappicons.example"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      ["../app.plugin.js", ["./assets/icon-a.png", "./assets/icon-b.png", "./assets/icon-c.png"]]
+    ]
+  }
+}

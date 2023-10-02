@@ -1,0 +1,44 @@
+{
+  "name": "expo-alternate-app-icons",
+  "version": "0.1.0",
+  "description": "Provides functions that let you change the app icon",
+  "repository": "https://github.com/pchalupa/expo-alternate-app-icons",
+  "bugs": {
+    "url": "https://github.com/pchalupa/expo-alternate-app-icons/issues"
+  },
+  "author": "pchalupa <chalupa.petr93@gmail.com> (https://github.com/pchalupa)",
+  "license": "MIT",
+  "homepage": "https://github.com/pchalupa/expo-alternate-app-icons#readme",
+  "keywords": [
+    "react-native",
+    "expo",
+    "expo-alternate-app-icons",
+    "ExpoAlternateAppIcons"
+  ],
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "expo-module build",
+    "clean": "expo-module clean",
+    "lint": "expo-module lint",
+    "test": "expo-module test",
+    "prepare": "expo-module prepare",
+    "prepublishOnly": "expo-module prepublishOnly",
+    "expo-module": "expo-module",
+    "open:ios": "open -a \"Xcode\" example/ios",
+    "open:android": "open -a \"Android Studio\" example/android"
+  },
+  "devDependencies": {
+    "@auto-it/conventional-commits": "^11.0.4",
+    "@auto-it/npm": "^11.0.4",
+    "auto": "^11.0.4",
+    "expo-module-scripts": "^3.1.0",
+    "expo-modules-core": "^1.5.11",
+    "prettier": "^3.0.3"
+  },
+  "peerDependencies": {
+    "expo": "*",
+    "react": "*",
+    "react-native": "*"
+  }
+}

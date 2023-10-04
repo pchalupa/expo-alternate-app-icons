@@ -6,6 +6,8 @@ Expo Alternate App Icons is a library that allows you to easily switch between d
 
 Customizing app icons can be a valuable way to provide users with a personalized experience for your app. This library simplifies the process of implementing alternate app icons in your Expo project.
 
+### Demo
+
 <p align="center">
 	<img src="https://github.com/pchalupa/readme-assets/blob/main/expo-alternate-app-icons.gif" alt="demo" width="75%" />
 </p>
@@ -20,9 +22,10 @@ expo install expo-alternate-app-icons
 
 ## How To Use
 
-Add `expo-alternate-app-icons` to the plugins array inside your [app.json](https://docs.expo.dev/versions/latest/config/app/). The second argument should be an array containing paths to your alternate icons.
+This package contains an Expo Plugin that copies your alternative icons to the Xcode project.
 
-> Your icons should have dimensions of 1024x1024 pixels in PNG format and without a transparency layer.
+1. Add `expo-alternate-app-icons` to the plugins array inside your [app.json](https://docs.expo.dev/versions/latest/config/app/).
+2. The second item in the array accepts an array with paths to your alternate icons.
 
 ```json5
 // app.json
@@ -37,6 +40,14 @@ Add `expo-alternate-app-icons` to the plugins array inside your [app.json](https
   ],
 }
 ```
+
+### Icons
+
+Your icons should follow the same format as your [default app icon](https://docs.expo.dev/develop/user-interface/app-icons/#ios).
+
+- Use a **.png** file.
+- Square format with resolution **1024x1024 px**.
+- Without transparency layer.
 
 ### API Documentation
 

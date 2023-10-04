@@ -24,17 +24,17 @@ Add `expo-alternate-app-icons` to the plugins array inside your [app.json](https
 
 > Your icons should have dimensions of 1024x1024 pixels in PNG format and without a transparency layer.
 
-```json
+```json5
 // app.json
 {
   // ...
-  "plugins": [
+  plugins: [
     // ...
     [
-      "expo-alternate-app-icons", // add "expo-alternate-app-icons" to the plugins array
-      ["./assets/icon-a.png", "./assets/icon-b.png", "./assets/icon-c.png"] // array with paths to the icons
-    ]
-  ]
+      'expo-alternate-app-icons', // add "expo-alternate-app-icons" to the plugins array
+      ['./assets/icon-a.png', './assets/icon-b.png', './assets/icon-c.png'], // array with paths to the icons
+    ],
+  ],
 }
 ```
 

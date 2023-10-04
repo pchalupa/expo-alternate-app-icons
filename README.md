@@ -53,7 +53,7 @@ Your icons should follow the same format as your [default app icon](https://docs
 
 #### Set Alternate App Icon
 
-To set app icon to **icon-a.png**, use `setAlternateAppIcon("icon-a")`. Function takes exact icon name without suffix.
+To set app icon to **icon-a.png**, use `setAlternateAppIcon("icon-a")`. This function takes exact icon name without suffix.
 
 To reset the app icon to the default pass `null` like `setAlternateAppIcon(null)`.
 

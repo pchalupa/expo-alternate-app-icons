@@ -1,8 +1,14 @@
 # Expo Alternate App Icons
 
-Provides an interface for alternate the app icon.
+Expo Alternate App Icons is a library that allows you to easily switch between different app icons in your Expo project.
+
+## Introduction
+
+Customizing app icons can be a valuable way to provide users with a personalized experience for your app. This library simplifies the process of implementing alternate app icons in your Expo project.
 
 ## Installation
+
+To get started, install the library using Expo CLI:
 
 ```sh
 expo install expo-alternate-app-icons
@@ -10,9 +16,9 @@ expo install expo-alternate-app-icons
 
 ## How To Use
 
-Add `expo-alternate-app-icons` into the plugins array inside your app.json. The second argument is an array with paths to the icons.
+Add `expo-alternate-app-icons` to the plugins array inside your [app.json](https://docs.expo.dev/versions/latest/config/app/). The second argument should be an array containing paths to your alternate icons.
 
-> Your icons should be **1024x1024** format without transparency layer.
+> Your icons should have dimensions of 1024x1024 pixels in PNG format and without a transparency layer.
 
 ```json
 // app.json
@@ -32,7 +38,9 @@ Add `expo-alternate-app-icons` into the plugins array inside your app.json. The 
 
 #### Set Alternate App Icon
 
-To set alternate icon to **icon-a** use `setAlternateAppIcon("icon-a")`. To reset the app icon to the default one use `setAlternateAppIcon(null)`.
+To set app icon to **icon-a.png**, use `setAlternateAppIcon("icon-a")`. Function takes exact icon name without suffix.
+
+To reset the app icon to the default pass `null` like `setAlternateAppIcon(null)`.
 
 ```ts
 function setAlternateAppIcon(name: string | null): Promise<string>;
@@ -40,7 +48,7 @@ function setAlternateAppIcon(name: string | null): Promise<string>;
 
 #### Get App Icon Name
 
-Returns current app icon name.
+Retrieves the name of the currently active app icon.
 
 ```ts
 function getAppIconName(): string;
@@ -48,7 +56,7 @@ function getAppIconName(): string;
 
 #### Supports Alternate Icons
 
-Indicates if current device supports alternate icons.
+A boolean value indicating whether the current device supports alternate app icons.
 
 ```ts
 const supportsAlternateIcons: boolean;

@@ -2,7 +2,9 @@
 
 Expo Alternate App Icons is a library that allows you to easily switch between different app icons in your Expo project.
 
-![](https://github.com/pchalupa/readme-assets/blob/main/expo-alternate-app-icons.gif)
+<p align="center">
+  <img src="https://github.com/pchalupa/readme-assets/blob/main/expo-alternate-app-icons.gif" alt="demo" />
+</p>
 
 ## Introduction
 

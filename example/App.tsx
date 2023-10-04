@@ -3,6 +3,7 @@ import {
   getAppIconName,
   supportsAlternateIcons,
 } from 'expo-alternate-app-icons';
+import { StatusBar } from 'expo-status-bar';
 import { useCallback, useState } from 'react';
 import { Text, View, SafeAreaView, Alert } from 'react-native';
 
@@ -31,6 +32,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar style="light" />
       <View style={styles.wrapper}>
         <Text style={[styles.text, styles.title]}>Pick Home Screen Icon</Text>
         <Text style={styles.text}>

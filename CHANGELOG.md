@@ -1,3 +1,21 @@
+# 0.1.4 (Tue Oct 10 2023)
+
+#### 🐛 Bug Fix
+
+- docs(README): add platform compatibility table [#9](https://github.com/pchalupa/expo-alternate-app-icons/pull/9) ([@pchalupa](https://github.com/pchalupa))
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump postcss from 8.4.30 to 8.4.31 in /example [#7](https://github.com/pchalupa/expo-alternate-app-icons/pull/7) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump postcss from 8.4.30 to 8.4.31 [#8](https://github.com/pchalupa/expo-alternate-app-icons/pull/8) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 0.1.3 (Wed Oct 04 2023)
 
 #### 🐛 Bug Fix

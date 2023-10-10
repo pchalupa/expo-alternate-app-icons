@@ -2,6 +2,12 @@
 
 Expo Alternate App Icons is a library that allows you to easily switch between different app icons in your Expo project.
 
+### Platform Compatibility
+
+| Android Device | Android Emulator | iOS Device | iOS Simulator | Web |
+| -------------- | ---------------- | ---------- | ------------- | --- |
+| ❌             | ❌               | ✅         | ✅            | ❌  |
+
 ## Introduction
 
 Customizing app icons can be a valuable way to provide users with a personalized experience for your app. This library simplifies the process of implementing alternate app icons in your Expo project.

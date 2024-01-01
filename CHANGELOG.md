@@ -1,3 +1,27 @@
+# 0.1.5 (Mon Jan 01 2024)
+
+#### 🐛 Bug Fix
+
+- refactor: build property constant [#19](https://github.com/pchalupa/expo-alternate-app-icons/pull/19) ([@pchalupa](https://github.com/pchalupa))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump prettier from 3.1.0 to 3.1.1 [#18](https://github.com/pchalupa/expo-alternate-app-icons/pull/18) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump expo-modules-core from 1.5.11 to 1.5.12 [#17](https://github.com/pchalupa/expo-alternate-app-icons/pull/17) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump prettier from 3.0.3 to 3.1.0 [#16](https://github.com/pchalupa/expo-alternate-app-icons/pull/16) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump actions/setup-node from 3 to 4 [#14](https://github.com/pchalupa/expo-alternate-app-icons/pull/14) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump react-devtools-core from 4.28.0 to 4.28.4 [#13](https://github.com/pchalupa/expo-alternate-app-icons/pull/13) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump react-devtools-core from 4.28.0 to 4.28.4 in /example [#12](https://github.com/pchalupa/expo-alternate-app-icons/pull/12) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump @babel/traverse from 7.23.0 to 7.23.2 [#10](https://github.com/pchalupa/expo-alternate-app-icons/pull/10) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump @babel/traverse from 7.23.0 to 7.23.2 in /example [#11](https://github.com/pchalupa/expo-alternate-app-icons/pull/11) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 0.1.4 (Tue Oct 10 2023)
 
 #### 🐛 Bug Fix

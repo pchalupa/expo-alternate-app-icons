@@ -1,14 +1,17 @@
 import { type ExpoConfig } from '@expo/config-types';
 import { withXcodeProject } from 'expo/config-plugins';
 
+const ALTERNATE_APP_ICONS_NAMES_PROPERTY = 'ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES';
+
 export function withXcodeProjectUpdate(
   config: ExpoConfig,
   alternateAppIconNames: Set<string>,
 ): ExpoConfig {
   config = withXcodeProject(config, (config) => {
-    const property = 'ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES';
-
-    config.modResults.updateBuildProperty(property, Array.from(alternateAppIconNames));
+    config.modResults.updateBuildProperty(
+      ALTERNATE_APP_ICONS_NAMES_PROPERTY,
+      Array.from(alternateAppIconNames),
+    );
 
     return config;
   });

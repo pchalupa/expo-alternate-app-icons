@@ -1,5 +1,6 @@
 import {
   setAlternateAppIcon,
+  resetAppIcon,
   getAppIconName,
   supportsAlternateIcons,
 } from 'expo-alternate-app-icons';
@@ -13,10 +14,10 @@ import { Button } from './src/Button';
 import { IconButton } from './src/IconButton';
 
 export default function App() {
-  const [currentAppIconName, setCurrentAppIconName] = useState(getAppIconName());
+  const [currentAppIconName, setCurrentAppIconName] = useState<string | null>(getAppIconName());
 
   const handleSetAppIcon = useCallback(
-    async (iconName: string | null) => {
+    async (iconName: string) => {
       try {
         const newAppIconName = await setAlternateAppIcon(iconName);
 
@@ -28,7 +29,15 @@ export default function App() {
     [setCurrentAppIconName],
   );
 
-  const handleReset = useCallback(() => handleSetAppIcon(null), [handleSetAppIcon]);
+  const handleReset = useCallback(async () => {
+    try {
+      await resetAppIcon();
+
+      setCurrentAppIconName(null);
+    } catch (error) {
+      if (error instanceof Error) Alert.alert('Error', error.message);
+    }
+  }, [setCurrentAppIconName]);
 
   return (
     <SafeAreaView style={styles.container}>

@@ -57,6 +57,14 @@ Your icons should follow the same format as your [default app icon](https://docs
 
 ### API Documentation
 
+#### Supports Alternate Icons
+
+A boolean value indicating whether the current device supports alternate app icons.
+
+```ts
+const supportsAlternateIcons: boolean;
+```
+
 #### Set Alternate App Icon
 
 To set app icon to **icon-a.png**, use `setAlternateAppIcon("icon-a")`. This function takes exact icon name without suffix.
@@ -64,7 +72,7 @@ To set app icon to **icon-a.png**, use `setAlternateAppIcon("icon-a")`. This fun
 To reset the app icon to the default pass `null` like `setAlternateAppIcon(null)`.
 
 ```ts
-function setAlternateAppIcon(name: string | null): Promise<string>;
+function setAlternateAppIcon(name: string | null): Promise<string | null>;
 ```
 
 #### Get App Icon Name
@@ -72,13 +80,13 @@ function setAlternateAppIcon(name: string | null): Promise<string>;
 Retrieves the name of the currently active app icon.
 
 ```ts
-function getAppIconName(): string;
+function getAppIconName(): string | null;
 ```
 
-#### Supports Alternate Icons
+#### Reset App Icon
 
-A boolean value indicating whether the current device supports alternate app icons.
+To reset app icon to the default one.
 
 ```ts
-const supportsAlternateIcons: boolean;
+function resetAppIcon(): Promise<void>;
 ```

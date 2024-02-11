@@ -85,7 +85,9 @@ function getAppIconName(): string | null;
 
 #### Reset App Icon
 
-To reset app icon to the default one.
+Reset app icon to the default one.
+
+> This is just a shortcut for `setAlternateAppIcon(null)`.
 
 ```ts
 function resetAppIcon(): Promise<void>;

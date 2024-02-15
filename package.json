@@ -1,6 +1,6 @@
 {
   "name": "expo-alternate-app-icons",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Provides functions that let you change the app icon",
   "repository": "https://github.com/pchalupa/expo-alternate-app-icons",
   "bugs": {

@@ -30,7 +30,7 @@ export const supportsAlternateIcons: boolean = ExpoAlternateAppIconsModule.suppo
  * const resetResult = await setAlternateAppIcon(null);
  */
 export async function setAlternateAppIcon(name: string | null): Promise<string | null> {
-  return await ExpoAlternateAppIconsModule.setAlternateAppIcon(name);
+  return ExpoAlternateAppIconsModule.setAlternateAppIcon(name);
 }
 
 /**
@@ -54,5 +54,5 @@ export function getAppIconName(): string | null {
  * @throws {Error} Throws an error if there is an issue with setting the alternate app icon.
  */
 export async function resetAppIcon(): Promise<void> {
-  await ExpoAlternateAppIconsModule.setAlternateAppIcon(null);
+  await setAlternateAppIcon(null);
 }

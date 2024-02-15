@@ -1,3 +1,25 @@
+# 0.1.6 (Thu Feb 15 2024)
+
+#### 🐛 Bug Fix
+
+- feat: reset app icon function [#26](https://github.com/pchalupa/expo-alternate-app-icons/pull/26) ([@pchalupa](https://github.com/pchalupa))
+
+#### 🔩 Dependency Updates
+
+- chore: upgrade expo [#27](https://github.com/pchalupa/expo-alternate-app-icons/pull/27) ([@pchalupa](https://github.com/pchalupa))
+- chore(deps-dev): bump prettier from 3.2.4 to 3.2.5 [#25](https://github.com/pchalupa/expo-alternate-app-icons/pull/25) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump expo-modules-core from 1.11.7 to 1.11.8 [#24](https://github.com/pchalupa/expo-alternate-app-icons/pull/24) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump expo-modules-core from 1.5.12 to 1.11.7 [#22](https://github.com/pchalupa/expo-alternate-app-icons/pull/22) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump expo-module-scripts from 3.1.0 to 3.4.0 [#21](https://github.com/pchalupa/expo-alternate-app-icons/pull/21) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump prettier from 3.1.1 to 3.2.4 [#23](https://github.com/pchalupa/expo-alternate-app-icons/pull/23) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 0.1.5 (Mon Jan 01 2024)
 
 #### 🐛 Bug Fix

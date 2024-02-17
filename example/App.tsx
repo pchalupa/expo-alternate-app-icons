@@ -17,7 +17,7 @@ type ValuesOf<T> = T extends readonly [infer F extends readonly unknown[], ...in
   ? F[0] | ValuesOf<R>
   : never;
 
-type IconNames = ValuesOf<typeof icons>;
+export type IconNames = ValuesOf<typeof icons>;
 
 export default function App() {
   const [currentAppIconName, setCurrentAppIconName] = useState<string | null>(getAppIconName());

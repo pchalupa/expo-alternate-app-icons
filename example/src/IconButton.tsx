@@ -2,11 +2,12 @@ import { useCallback } from 'react';
 import { Image, type ImageRequireSource, TouchableOpacity } from 'react-native';
 
 import { styles } from './IconButton.styles';
+import { IconNames } from '../App';
 
 interface IconButtonProps {
   source: ImageRequireSource;
-  name: string;
-  onPress: (name: string) => void;
+  name: IconNames;
+  onPress: (name: IconNames) => void;
   selected: boolean;
 }
 

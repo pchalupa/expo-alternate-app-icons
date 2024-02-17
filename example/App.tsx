@@ -13,11 +13,17 @@ import { styles } from './App.styles';
 import { Button } from './src/Button';
 import { IconButton } from './src/IconButton';
 
+type ValuesOf<T> = T extends readonly [infer F extends readonly unknown[], ...infer R]
+  ? F[0] | ValuesOf<R>
+  : never;
+
+type IconNames = ValuesOf<typeof icons>;
+
 export default function App() {
   const [currentAppIconName, setCurrentAppIconName] = useState<string | null>(getAppIconName());
 
   const handleSetAppIcon = useCallback(
-    async (iconName: string) => {
+    async (iconName: IconNames) => {
       try {
         const newAppIconName = await setAlternateAppIcon(iconName);
 

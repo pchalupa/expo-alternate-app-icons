@@ -21,7 +21,7 @@ public class ExpoAlternateAppIconsModule: Module {
     }
 
     private func setAlternateAppIcon(icon: String?, promise: Promise) -> Void {
-        Task {
+        Task { @MainActor in
             do {
                 try await UIApplication.shared.setAlternateIconName(icon);
 

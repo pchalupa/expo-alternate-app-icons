@@ -1,3 +1,24 @@
+# 0.1.7 (Wed Mar 06 2024)
+
+#### 🐛 Bug Fix
+
+- refactor: run task on main thread [#36](https://github.com/pchalupa/expo-alternate-app-icons/pull/36) ([@pchalupa](https://github.com/pchalupa))
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump ip from 1.1.8 to 1.1.9 in /example [#31](https://github.com/pchalupa/expo-alternate-app-icons/pull/31) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump ip from 1.1.8 to 1.1.9 [#32](https://github.com/pchalupa/expo-alternate-app-icons/pull/32) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump @auto-it/conventional-commits from 11.0.4 to 11.1.1 [#33](https://github.com/pchalupa/expo-alternate-app-icons/pull/33) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump expo-modules-core from 1.11.8 to 1.11.9 [#30](https://github.com/pchalupa/expo-alternate-app-icons/pull/30) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump auto from 11.0.4 to 11.1.1 [#34](https://github.com/pchalupa/expo-alternate-app-icons/pull/34) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 0.1.6 (Thu Feb 15 2024)
 
 #### 🐛 Bug Fix

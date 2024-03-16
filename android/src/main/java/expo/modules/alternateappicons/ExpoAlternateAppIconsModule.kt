@@ -1,5 +1,6 @@
 package expo.modules.alternateappicons
 
+import expo.modules.kotlin.Promise
 import expo.modules.kotlin.modules.Module
 import expo.modules.kotlin.modules.ModuleDefinition
 
@@ -11,16 +12,15 @@ class ExpoAlternateAppIconsModule : Module() {
       "supportsAlternateIcons" to true
     )
 
-    // Defines a JavaScript synchronous function that runs the native code on the JavaScript thread.
-    Function("hello") {
-      "Hello world! 👋"
-    }
+    Function("getAppIconName", this@ExpoAlternateAppIconsModule::getAppIconName)
+    AsyncFunction("setAlternateAppIcon", this@ExpoAlternateAppIconsModule::setAlternateAppIcon)
+  }
 
-    AsyncFunction("setValueAsync") { value: String ->
-      // Send an event to JavaScript.
-      sendEvent("onChange", mapOf(
-        "value" to value
-      ))
-    }
+  private fun getAppIconName(): String? {
+    return null
+  }
+
+  private fun setAlternateAppIcon(icon: String?, promise: Promise): String? {
+    return null
   }
 }

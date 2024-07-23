@@ -24,7 +24,7 @@ jobs:
       url: https://www.npmjs.com/package/expo-alternate-app-icons
     steps:
       - run: |
-          git config --global --add url."git@github.com:".insteadOf "https://github.com/"
+          git config --global credential.https://github.com.username pchalupa
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}

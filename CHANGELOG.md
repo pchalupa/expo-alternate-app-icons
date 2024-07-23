@@ -1,3 +1,28 @@
+# 0.1.8 (Tue Jul 23 2024)
+
+#### 🐛 Bug Fix
+
+- ci: fix publish job [#69](https://github.com/pchalupa/expo-alternate-app-icons/pull/69) ([@pchalupa](https://github.com/pchalupa))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump expo-modules-core from 1.11.12 to 1.11.13 [#49](https://github.com/pchalupa/expo-alternate-app-icons/pull/49) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump tar from 6.2.0 to 6.2.1 [#48](https://github.com/pchalupa/expo-alternate-app-icons/pull/48) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump tar from 6.2.0 to 6.2.1 in /example [#47](https://github.com/pchalupa/expo-alternate-app-icons/pull/47) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump @auto-it/conventional-commits from 11.1.2 to 11.1.6 [#46](https://github.com/pchalupa/expo-alternate-app-icons/pull/46) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump auto from 11.1.2 to 11.1.6 [#44](https://github.com/pchalupa/expo-alternate-app-icons/pull/44) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump @auto-it/conventional-commits from 11.1.1 to 11.1.2 [#43](https://github.com/pchalupa/expo-alternate-app-icons/pull/43) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump auto from 11.1.1 to 11.1.2 [#41](https://github.com/pchalupa/expo-alternate-app-icons/pull/41) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump expo-modules-core from 1.11.10 to 1.11.12 [#39](https://github.com/pchalupa/expo-alternate-app-icons/pull/39) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump expo-modules-core from 1.11.9 to 1.11.10 [#38](https://github.com/pchalupa/expo-alternate-app-icons/pull/38) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 0.1.7 (Wed Mar 06 2024)
 
 #### 🐛 Bug Fix

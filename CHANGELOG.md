@@ -1,3 +1,26 @@
+# 0.1.9 (Tue Jul 23 2024)
+
+#### 🐛 Bug Fix
+
+- chore(deps): bump ws [#73](https://github.com/pchalupa/expo-alternate-app-icons/pull/73) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump semver and expo [#72](https://github.com/pchalupa/expo-alternate-app-icons/pull/72) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump braces from 3.0.2 to 3.0.3 in /example [#70](https://github.com/pchalupa/expo-alternate-app-icons/pull/70) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps-dev): bump @auto-it/npm from 11.1.6 to 11.2.0 [#67](https://github.com/pchalupa/expo-alternate-app-icons/pull/67) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps-dev): bump expo-module-scripts from 3.4.1 to 3.5.2 [#55](https://github.com/pchalupa/expo-alternate-app-icons/pull/55) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps-dev): bump expo-modules-core from 1.11.13 to 1.12.19 [#65](https://github.com/pchalupa/expo-alternate-app-icons/pull/65) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps-dev): bump prettier from 3.2.5 to 3.3.3 [#66](https://github.com/pchalupa/expo-alternate-app-icons/pull/66) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps-dev): bump auto from 11.1.6 to 11.2.0 [#68](https://github.com/pchalupa/expo-alternate-app-icons/pull/68) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 0.1.8 (Tue Jul 23 2024)
 
 #### 🐛 Bug Fix

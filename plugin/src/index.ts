@@ -1,6 +1,7 @@
 import { type ExpoConfig } from '@expo/config-types';
 
 import { withAlternateAppIconsGenerator } from './withAlternateAppIconsGenerator';
+import { withAndroidManifestUpdate } from './withAndroidManifestUpdate';
 import { withXcodeProjectUpdate } from './withXcodeProjectUpdate';
 
 export default function withAlternateAppIcons(
@@ -11,6 +12,7 @@ export default function withAlternateAppIcons(
 
   config = withAlternateAppIconsGenerator(config, iconPaths, iconNames);
   config = withXcodeProjectUpdate(config, iconNames);
+  config = withAndroidManifestUpdate(config);
 
   return config;
 }

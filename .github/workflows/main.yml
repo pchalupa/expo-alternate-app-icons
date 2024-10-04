@@ -25,10 +25,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_TOKEN }}
-      - run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          fetch-depth: 0
+          ssh-key: ${{ secrets.SSH_KEY }}
       - run: git fetch --unshallow --tags
       - uses: actions/setup-node@v4
         with:
@@ -36,6 +34,6 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx auto shipit

@@ -27,7 +27,6 @@ jobs:
         with:
           fetch-depth: 0
           ssh-key: ${{ secrets.SSH_KEY }}
-      - run: git fetch --unshallow --tags
       - uses: actions/setup-node@v4
         with:
           node-version: 20

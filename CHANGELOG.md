@@ -1,3 +1,24 @@
+# 0.1.11 (Fri Oct 04 2024)
+
+#### 🐛 Bug Fix
+
+- ci: use deploy key [#95](https://github.com/pchalupa/expo-alternate-app-icons/pull/95) ([@pchalupa](https://github.com/pchalupa))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump @auto-it/npm from 11.1.6 to 11.2.1 [#87](https://github.com/pchalupa/expo-alternate-app-icons/pull/87) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump serve-static from 1.15.0 to 1.16.2 [#90](https://github.com/pchalupa/expo-alternate-app-icons/pull/90) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump micromatch from 4.0.5 to 4.0.8 in /example [#88](https://github.com/pchalupa/expo-alternate-app-icons/pull/88) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump body-parser from 1.20.2 to 1.20.3 [#91](https://github.com/pchalupa/expo-alternate-app-icons/pull/91) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump serve-static from 1.15.0 to 1.16.2 in /example [#92](https://github.com/pchalupa/expo-alternate-app-icons/pull/92) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 0.1.10 (Fri Oct 04 2024)
 
 #### 🐛 Bug Fix

@@ -20,7 +20,7 @@ jobs:
     needs: test
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
     permissions:
-      contents: write
+      pull-requests: write
     environment:
       name: npm
       url: https://www.npmjs.com/package/expo-alternate-app-icons

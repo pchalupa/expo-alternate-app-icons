@@ -5,12 +5,12 @@ const ALTERNATE_APP_ICONS_NAMES_PROPERTY = 'ASSETCATALOG_COMPILER_ALTERNATE_APPI
 
 export function withXcodeProjectUpdate(
   config: ExpoConfig,
-  alternateAppIconNames: Set<string>,
+  alternateAppIconNames: string[],
 ): ExpoConfig {
   config = withXcodeProject(config, (config) => {
     config.modResults.updateBuildProperty(
       ALTERNATE_APP_ICONS_NAMES_PROPERTY,
-      Array.from(alternateAppIconNames),
+      alternateAppIconNames,
     );
 
     return config;

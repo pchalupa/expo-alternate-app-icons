@@ -3,15 +3,14 @@ import { type ExpoConfig } from '@expo/config-types';
 import { withAlternateAppIconsGenerator } from './withAlternateAppIconsGenerator';
 import { withAndroidManifestUpdate } from './withAndroidManifestUpdate';
 import { withXcodeProjectUpdate } from './withXcodeProjectUpdate';
+import { AlternateIcon } from './types';
 
 export default function withAlternateAppIcons(
   config: ExpoConfig,
-  iconPaths: string[] = [],
+  alternateIcons: AlternateIcon[] = [],
 ): ExpoConfig {
-  const iconNames = new Set<string>();
-
-  config = withAlternateAppIconsGenerator(config, iconPaths, iconNames);
-  config = withXcodeProjectUpdate(config, iconNames);
+  config = withAlternateAppIconsGenerator(config, alternateIcons);
+  config = withXcodeProjectUpdate(config, alternateIcons.map((icon) => icon.name));
   config = withAndroidManifestUpdate(config);
 
   return config;

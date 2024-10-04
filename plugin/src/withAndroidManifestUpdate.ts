@@ -1,13 +1,18 @@
 import { AndroidConfig, withAndroidManifest } from '@expo/config-plugins';
 import { ExpoConfig } from '@expo/config-types';
 
-export function withAndroidManifestUpdate(config: ExpoConfig) {
+export function withAndroidManifestUpdate(
+  config: ExpoConfig,
+  alternateIconNames: string[],
+) {
   const { getMainApplicationOrThrow } = AndroidConfig.Manifest;
 
-  config = withAndroidManifest(config, (config) => {
+  config = withAndroidManifest(config, (config, ) => {
     const mainApplication = getMainApplicationOrThrow(config.modResults);
 
-    addActivityAliasToMainApplication(mainApplication);
+    for (const name of alternateIconNames) {
+      addActivityAliasToMainApplication(mainApplication, name);
+    }
 
     return config;
   });
@@ -17,14 +22,15 @@ export function withAndroidManifestUpdate(config: ExpoConfig) {
 
 function addActivityAliasToMainApplication(
   mainApplication: AndroidConfig.Manifest.ManifestActivity,
+  iconName: string,
 ) {
   // @ts-ignore
   mainApplication['activity-alias']?.push({
     $: {
-      'android:name': '.MainActivityDark',
+      'android:name': `.MainActivity${iconName}`,
       'android:enabled': 'false',
       'android:exported': 'true',
-      'android:icon': '@mipmap/ic_launcher_dark',
+      'android:icon': `@mipmap/ic_launcher_${iconName.toLowerCase()}`,
       'android:targetActivity': '.MainActivity',
     },
     'intent-filter': [

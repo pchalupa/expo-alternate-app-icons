@@ -9,9 +9,10 @@ export default function withAlternateAppIcons(
   config: ExpoConfig,
   alternateIcons: AlternateIcon[] = [],
 ): ExpoConfig {
+  const iconNames = alternateIcons.map((icon) => icon.name);
   config = withAlternateAppIconsGenerator(config, alternateIcons);
-  config = withXcodeProjectUpdate(config, alternateIcons.map((icon) => icon.name));
-  config = withAndroidManifestUpdate(config);
+  config = withXcodeProjectUpdate(config, iconNames);
+  config = withAndroidManifestUpdate(config, iconNames);
 
   return config;
 }

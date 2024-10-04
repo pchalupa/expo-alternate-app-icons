@@ -1,3 +1,15 @@
+# 0.1.10 (Fri Oct 04 2024)
+
+#### 🐛 Bug Fix
+
+- ci(publish): fix failing pipeline [#94](https://github.com/pchalupa/expo-alternate-app-icons/pull/94) ([@pchalupa](https://github.com/pchalupa))
+
+#### Authors: 1
+
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 0.1.9 (Tue Jul 23 2024)
 
 #### 🐛 Bug Fix

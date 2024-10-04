@@ -19,23 +19,22 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
+    permissions:
+      pull-requests: write
     environment:
       name: npm
       url: https://www.npmjs.com/package/expo-alternate-app-icons
     steps:
-      - run: |
-          git config --global user.name github-actions
-          git config --global user.email github-actions@github.com
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_TOKEN }}
-      - run: git fetch --unshallow --tags
+          fetch-depth: 0
+          ssh-key: ${{ secrets.SSH_KEY }}
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
       - run: npm ci
       - env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx auto shipit

@@ -3,8 +3,11 @@ package expo.modules.alternateappicons
 import android.content.ComponentName
 import android.content.pm.PackageManager
 import expo.modules.kotlin.Promise
+import expo.modules.kotlin.functions.Coroutine
 import expo.modules.kotlin.modules.Module
 import expo.modules.kotlin.modules.ModuleDefinition
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class ExpoAlternateAppIconsModule : Module() {
   override fun definition() = ModuleDefinition {
@@ -15,28 +18,34 @@ class ExpoAlternateAppIconsModule : Module() {
     )
 
     Function("getAppIconName", this@ExpoAlternateAppIconsModule::getAppIconName)
-    AsyncFunction("setAlternateAppIcon", this@ExpoAlternateAppIconsModule::setAlternateAppIcon)
+    AsyncFunction("setAlternateAppIcon").Coroutine(this@ExpoAlternateAppIconsModule::setAlternateAppIcon)
   }
 
   private fun getAppIconName(): String? {
-    val activityName = appContext.activityProvider?.currentActivity?.componentName?.shortClassName
+    val activityName = appContext.activityProvider?.currentActivity?.componentName?.className
 
-    if(activityName !== null && activityName.startsWith(".MainActivity")) return null
+    if(activityName !== null && !activityName.startsWith("MainActivity") || activityName == "MainActivity") return null
 
-
-    println("activity name is:")
-    println(activityName)
-
-
-    return activityName
+    return activityName?.substring(12)
   }
 
-  private fun setAlternateAppIcon(icon: String?, promise: Promise): String? {
-    appContext.reactContext?.packageManager?.setComponentEnabledSetting(ComponentName("expo.modules.alternateappicons.example", "expo.modules.alternateappicons.example.MainActivityLight"), PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP)
-    appContext.reactContext?.packageManager?.setComponentEnabledSetting(ComponentName("expo.modules.alternateappicons.example", "expo.modules.alternateappicons.example.MainActivity"), PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP)
+  private suspend fun setAlternateAppIcon(icon: String?): String? = withContext(Dispatchers.Main) {
+    val currentActivityComponent = appContext.activityProvider?.currentActivity?.componentName
 
-    promise.resolve(icon)
+    if (currentActivityComponent == null || !currentActivityComponent.className.startsWith("MainActivity")) return@withContext null
 
-    return icon
+    val newActivityName = "MainActivity${icon ?: ""}"
+
+    if (currentActivityComponent.className == newActivityName) return@withContext icon
+
+    val packageName = currentActivityComponent.packageName;
+    val newActivityComponent = ComponentName(packageName, "$packageName.$newActivityName")
+
+    appContext.reactContext?.packageManager?.run {
+      setComponentEnabledSetting(newActivityComponent, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP)
+      setComponentEnabledSetting(currentActivityComponent, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP)
+    }
+
+      return@withContext icon
   }
 }

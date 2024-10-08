@@ -22,30 +22,30 @@ class ExpoAlternateAppIconsModule : Module() {
   }
 
   private fun getAppIconName(): String? {
-    val activityName = appContext.activityProvider?.currentActivity?.componentName?.className
+    val activityName = appContext.activityProvider?.currentActivity?.componentName?.shortClassName
 
-    if(activityName !== null && !activityName.startsWith("MainActivity") || activityName == "MainActivity") return null
+    if(activityName !== null && !activityName.startsWith(".MainActivity") || activityName == ".MainActivity") return null
 
-    return activityName?.substring(12)
+    return activityName?.substring(13)
   }
 
   private suspend fun setAlternateAppIcon(icon: String?): String? = withContext(Dispatchers.Main) {
     val currentActivityComponent = appContext.activityProvider?.currentActivity?.componentName
 
-    if (currentActivityComponent == null || !currentActivityComponent.className.startsWith("MainActivity")) return@withContext null
+    if (currentActivityComponent == null || !currentActivityComponent.shortClassName.startsWith(".MainActivity")) return@withContext null
 
-    val newActivityName = "MainActivity${icon ?: ""}"
+    val newActivityName = ".MainActivity${icon ?: ""}"
 
-    if (currentActivityComponent.className == newActivityName) return@withContext icon
+    if (currentActivityComponent.shortClassName == newActivityName) return@withContext icon
 
     val packageName = currentActivityComponent.packageName;
-    val newActivityComponent = ComponentName(packageName, "$packageName.$newActivityName")
+    val newActivityComponent = ComponentName(packageName, "$packageName$newActivityName")
 
     appContext.reactContext?.packageManager?.run {
       setComponentEnabledSetting(newActivityComponent, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP)
       setComponentEnabledSetting(currentActivityComponent, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP)
     }
 
-      return@withContext icon
+    return@withContext icon
   }
 }

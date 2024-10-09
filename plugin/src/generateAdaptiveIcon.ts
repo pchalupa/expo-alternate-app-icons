@@ -26,18 +26,30 @@ export async function generateAdaptiveIcon(
   if (!foregroundImage) return;
 
   const lowercased_name = name.toLowerCase();
+  const isAdaptive = Boolean(backgroundImage || backgroundColor);
+
+  // generate legacy icons
+  await generateMultiLayerImageAsync(projectRoot, {
+    icon: foregroundImage,
+    backgroundImage,
+    backgroundColor,
+    outputImageFileName: `ic_launcher_${lowercased_name}.png`,
+    imageCacheFolder: `android-standard-square-${lowercased_name}`,
+    backgroundImageCacheFolder: `android-standard-square-background-${lowercased_name}`,
+  });
 
   if (monochromeImage) {
     await generateMonochromeImageAsync(projectRoot, {
       icon: monochromeImage,
-      imageCacheFolder: 'android-adaptive-monochrome',
+      imageCacheFolder: `android-adaptive-monochrome-${lowercased_name}`,
       outputImageFileName: `ic_launcher_monochrome_${lowercased_name}.png`,
     });
   }
 
+  // generate adaptive icons
   await generateMultiLayerImageAsync(projectRoot, {
     backgroundColor: 'transparent',
-    backgroundImage: backgroundImage ?? null,
+    backgroundImage: backgroundImage,
     backgroundImageCacheFolder: `android-adaptive-background-${lowercased_name}`,
     outputImageFileName: `ic_launcher_foreground_${lowercased_name}.png`,
     icon: foregroundImage,
@@ -45,12 +57,13 @@ export async function generateAdaptiveIcon(
     backgroundImageFileName: `ic_launcher_background_${lowercased_name}.png`,
   });
 
-  // create ic_launcher.xml and ic_launcher_round.xml
+  // create ic_launcher.xml
   const icLauncherXmlString = createAdaptiveIconXmlString(name, backgroundImage, monochromeImage);
   await createAdaptiveIconXmlFiles(
     name,
     projectRoot,
     icLauncherXmlString,
+    isAdaptive,
   );
 }
 
@@ -67,8 +80,8 @@ async function generateMultiLayerImageAsync(
     backgroundImageFileName,
   }: {
     icon: string;
-    backgroundImage: string | null;
-    backgroundColor: string | null;
+    backgroundImage?: string;
+    backgroundColor?: string;
     imageCacheFolder: string;
     backgroundImageCacheFolder: string;
     backgroundImageFileName?: string;
@@ -214,13 +227,17 @@ async function createAdaptiveIconXmlFiles(
   name: string,
   projectRoot: string,
   icLauncherXmlString: string,
+  add: boolean
 ) {
   const anyDpiV26Directory = path.resolve(projectRoot, ANDROID_RES_PATH, MIPMAP_ANYDPI_V26);
   await fs.ensureDir(anyDpiV26Directory);
   const launcherPath = path.resolve(anyDpiV26Directory, `ic_launcher_${name.toLowerCase()}.xml`);
-  // const launcherRoundPath = path.resolve(anyDpiV26Directory, `ic_launcher_round_${name.toLowerCase()}.xml`);
-  await Promise.all([
-    fs.writeFile(launcherPath, icLauncherXmlString),
-    // fs.writeFile(launcherRoundPath, icLauncherXmlString),
-  ]);
+  if (add) {
+    await fs.writeFile(launcherPath, icLauncherXmlString);
+  } else {
+    // Remove the xml if the icon switches from adaptive to standard.
+    if (fs.existsSync(launcherPath)) {
+      await fs.remove(launcherPath);
+    }
+  }
 }

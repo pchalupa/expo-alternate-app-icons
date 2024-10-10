@@ -7,6 +7,7 @@ import {
 import { ExpoConfig } from '@expo/config-types';
 import { AlternateIcon } from './types';
 import { generateAdaptiveIcon } from './generateAdaptiveIcon';
+import { toPascalCase } from './StringUtils';
 
 const { Colors } = AndroidConfig;
 
@@ -37,7 +38,7 @@ const withAndroidAdaptiveIconColors: ConfigPlugin<AlternateIcon> = (config, alte
   return withAndroidColors(config, (config) => {
     config.modResults = Colors.assignColorValue(config.modResults, {
       value: alternateIcon.android?.backgroundColor ?? '#FFFFFF',
-      name: `iconBackground${alternateIcon.name}`
+      name: `iconBackground${toPascalCase(alternateIcon.name)}`
     });
     return config;
   });

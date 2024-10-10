@@ -1,5 +1,6 @@
 import { AndroidConfig, withAndroidManifest } from '@expo/config-plugins';
 import { ExpoConfig, Android } from '@expo/config-types';
+import { toPascalCase, toSnakeCase } from './StringUtils';
 
 type AndroidIntentFilters = NonNullable<Android['intentFilters']>;
 
@@ -38,10 +39,10 @@ function addActivityAliasToMainApplication(
 ) {
   const activityAlias: ActivityAlias = {
     $: {
-      'android:name': `.MainActivity${iconName}`,
+      'android:name': `.MainActivity${toPascalCase(iconName)}`,
       'android:enabled': 'false',
       'android:exported': 'true',
-      'android:icon': `@mipmap/ic_launcher_${iconName.toLowerCase()}`,
+      'android:icon': `@mipmap/ic_launcher_${toSnakeCase(iconName)}`,
       'android:targetActivity': '.MainActivity',
     },
     'intent-filter': [

@@ -2,6 +2,7 @@ import { AlternateIcon } from './types';
 import { compositeImagesAsync, generateImageAsync } from '@expo/image-utils';
 import fs from 'fs-extra';
 import path from 'path';
+import { toPascalCase, toSnakeCase } from './StringUtils';
 
 type DPIString = 'mdpi' | 'hdpi' | 'xhdpi' | 'xxhdpi' | 'xxxhdpi';
 type dpiMap = Record<DPIString, { folderName: string; scale: number }>;
@@ -25,7 +26,7 @@ export async function generateAdaptiveIcon(
   const { foregroundImage, backgroundImage, backgroundColor, monochromeImage } = adaptiveIcon;
   if (!foregroundImage) return;
 
-  const lowercased_name = name.toLowerCase();
+  const snake_case_name = toSnakeCase(name);
   const isAdaptive = Boolean(backgroundImage || backgroundColor);
 
   // generate legacy icons
@@ -33,16 +34,20 @@ export async function generateAdaptiveIcon(
     icon: foregroundImage,
     backgroundImage,
     backgroundColor,
-    outputImageFileName: `ic_launcher_${lowercased_name}.png`,
-    imageCacheFolder: `android-standard-square-${lowercased_name}`,
-    backgroundImageCacheFolder: `android-standard-square-background-${lowercased_name}`,
+    outputImageFileName: `ic_launcher_${snake_case_name}.png`,
+    imageCacheFolder: `android-standard-square-${snake_case_name}`,
+    backgroundImageCacheFolder: `android-standard-square-background-${snake_case_name}`,
   });
+
+  if (!isAdaptive) {
+    return;
+  }
 
   if (monochromeImage) {
     await generateMonochromeImageAsync(projectRoot, {
       icon: monochromeImage,
-      imageCacheFolder: `android-adaptive-monochrome-${lowercased_name}`,
-      outputImageFileName: `ic_launcher_monochrome_${lowercased_name}.png`,
+      imageCacheFolder: `android-adaptive-monochrome-${snake_case_name}`,
+      outputImageFileName: `ic_launcher_monochrome_${snake_case_name}.png`,
     });
   }
 
@@ -50,11 +55,11 @@ export async function generateAdaptiveIcon(
   await generateMultiLayerImageAsync(projectRoot, {
     backgroundColor: 'transparent',
     backgroundImage: backgroundImage,
-    backgroundImageCacheFolder: `android-adaptive-background-${lowercased_name}`,
-    outputImageFileName: `ic_launcher_foreground_${lowercased_name}.png`,
+    backgroundImageCacheFolder: `android-adaptive-background-${snake_case_name}`,
+    outputImageFileName: `ic_launcher_foreground_${snake_case_name}.png`,
     icon: foregroundImage,
-    imageCacheFolder: `android-adaptive-foreground-${lowercased_name}`,
-    backgroundImageFileName: `ic_launcher_background_${lowercased_name}.png`,
+    imageCacheFolder: `android-adaptive-foreground-${snake_case_name}`,
+    backgroundImageFileName: `ic_launcher_background_${snake_case_name}.png`,
   });
 
   // create ic_launcher.xml
@@ -63,7 +68,6 @@ export async function generateAdaptiveIcon(
     name,
     projectRoot,
     icLauncherXmlString,
-    isAdaptive,
   );
 }
 
@@ -204,17 +208,20 @@ export const createAdaptiveIconXmlString = (
   backgroundImage?: string,
   monochromeImage?: string
 ) => {
+  const snake_case_name = toSnakeCase(name);
+  const PascalCaseName = toPascalCase(name);
+
   const background = backgroundImage
-    ? `@mipmap/ic_launcher_background_${name.toLowerCase()}`
-    : `@color/iconBackground${name}`;
+    ? `@mipmap/ic_launcher_background_${snake_case_name}`
+    : `@color/iconBackground${PascalCaseName}`;
 
   const iconElements: string[] = [
     `<background android:drawable="${background}"/>`,
-    `<foreground android:drawable="@mipmap/ic_launcher_foreground_${name.toLowerCase()}"/>`,
+    `<foreground android:drawable="@mipmap/ic_launcher_foreground_${snake_case_name}"/>`,
   ];
 
   if (monochromeImage) {
-    iconElements.push(`<monochrome android:drawable="@mipmap/ic_launcher_monochrome_${name.toLowerCase()}"/>`);
+    iconElements.push(`<monochrome android:drawable="@mipmap/ic_launcher_monochrome_${snake_case_name}"/>`);
   }
 
   return `<?xml version="1.0" encoding="utf-8"?>
@@ -226,18 +233,10 @@ export const createAdaptiveIconXmlString = (
 async function createAdaptiveIconXmlFiles(
   name: string,
   projectRoot: string,
-  icLauncherXmlString: string,
-  add: boolean
+  icLauncherXmlString: string
 ) {
   const anyDpiV26Directory = path.resolve(projectRoot, ANDROID_RES_PATH, MIPMAP_ANYDPI_V26);
   await fs.ensureDir(anyDpiV26Directory);
-  const launcherPath = path.resolve(anyDpiV26Directory, `ic_launcher_${name.toLowerCase()}.xml`);
-  if (add) {
-    await fs.writeFile(launcherPath, icLauncherXmlString);
-  } else {
-    // Remove the xml if the icon switches from adaptive to standard.
-    if (fs.existsSync(launcherPath)) {
-      await fs.remove(launcherPath);
-    }
-  }
+  const launcherPath = path.resolve(anyDpiV26Directory, `ic_launcher_${toSnakeCase(name)}.xml`);
+  await fs.writeFile(launcherPath, icLauncherXmlString);
 }

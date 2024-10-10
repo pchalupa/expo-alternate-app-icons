@@ -6,11 +6,12 @@ import { join, parse } from 'path';
 import { writeContentsJson } from './writeContentsJson';
 
 export async function generateUniversalIcon(
+  name: string,
   projectRoot: string,
   src: string,
   options: { width: number; height: number },
 ) {
-  const { base: filename, name } = parse(src);
+  const { base: filename } = parse(src);
   const iosProjectPath = join(projectRoot, 'ios', IOSConfig.XcodeUtils.getProjectName(projectRoot));
   const appIconSetPath = join(iosProjectPath, `Images.xcassets/${name}.appiconset`);
   const appIconPath = join(appIconSetPath, filename);
@@ -33,6 +34,4 @@ export async function generateUniversalIcon(
   } catch (error) {
     console.log(error);
   }
-
-  return name;
 }

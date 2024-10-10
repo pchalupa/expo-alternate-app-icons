@@ -1,6 +1,9 @@
 {
-  "platforms": ["ios"],
+  "platforms": ["ios", "android"],
   "ios": {
     "modules": ["ExpoAlternateAppIconsModule"]
+  },
+  "android": {
+    "modules": ["expo.modules.alternateappicons.ExpoAlternateAppIconsModule"]
   }
 }

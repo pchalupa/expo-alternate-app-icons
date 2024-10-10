@@ -18,8 +18,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/icon-foreground.png",
+        "backgroundColor": "#001413"
       },
       "package": "expo.modules.alternateappicons.example"
     },
@@ -27,7 +27,35 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      ["../app.plugin.js", ["./assets/icon-a.png", "./assets/icon-b.png", "./assets/icon-c.png"]]
+      [
+        "../app.plugin.js",
+        [
+          {
+            "name": "IconA",
+            "ios": "./assets/icon-a.png",
+            "android": {
+              "foregroundImage": "./assets/icon-a-foreground.png",
+              "backgroundColor": "#001413"
+            }
+          },
+          {
+            "name": "IconB",
+            "ios": "./assets/icon-b.png",
+            "android": {
+              "foregroundImage": "./assets/icon-b-foreground.png",
+              "backgroundColor": "#001413"
+            }
+          },
+          {
+            "name": "IconC",
+            "ios": "./assets/icon-c.png",
+            "android": {
+              "foregroundImage": "./assets/icon-c-foreground.png",
+              "backgroundColor": "#001413"
+            }
+          }
+        ]
+      ]
     ]
   }
 }

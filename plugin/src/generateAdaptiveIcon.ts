@@ -1,8 +1,8 @@
 import { AlternateIcon } from './types';
 import { compositeImagesAsync, generateImageAsync } from '@expo/image-utils';
-import fs from 'fs-extra';
 import path from 'path';
 import { toPascalCase, toSnakeCase } from './StringUtils';
+import { writeFile, mkdir, rm } from 'fs/promises';
 
 type DPIString = 'mdpi' | 'hdpi' | 'xhdpi' | 'xxhdpi' | 'xxxhdpi';
 type dpiMap = Record<DPIString, { folderName: string; scale: number }>;
@@ -113,7 +113,7 @@ async function generateMultiLayerImageAsync(
       });
 
       if (backgroundImageFileName) {
-        await fs.writeFile(path.resolve(dpiFolder, backgroundImageFileName), backgroundLayer);
+        await writeFile(path.resolve(dpiFolder, backgroundImageFileName), backgroundLayer);
       } else {
         iconLayer = await compositeImagesAsync({
           foreground: iconLayer,
@@ -125,8 +125,8 @@ async function generateMultiLayerImageAsync(
       await deleteIconNamedAsync(projectRoot, backgroundImageFileName);
     }
 
-    await fs.ensureDir(dpiFolder);
-    await fs.writeFile(path.resolve(dpiFolder, outputImageFileName), iconLayer);
+    await mkdir(dpiFolder, { recursive: true });
+    await writeFile(path.resolve(dpiFolder, outputImageFileName), iconLayer);
   });
 }
 
@@ -145,14 +145,14 @@ async function generateMonochromeImageAsync(
       scale,
       backgroundColor: 'transparent',
     });
-    await fs.ensureDir(dpiFolder);
-    await fs.writeFile(path.resolve(dpiFolder, outputImageFileName), monochromeIcon);
+    await mkdir(dpiFolder, { recursive: true });
+    await writeFile(path.resolve(dpiFolder, outputImageFileName), monochromeIcon);
   });
 }
 
 async function deleteIconNamedAsync(projectRoot: string, name: string) {
   return iterateDpiValues(projectRoot, ({ dpiFolder }) => {
-    return fs.remove(path.resolve(dpiFolder, name));
+    return rm(path.resolve(dpiFolder, name), { force: true });
   });
 }
 
@@ -236,7 +236,7 @@ async function createAdaptiveIconXmlFiles(
   icLauncherXmlString: string
 ) {
   const anyDpiV26Directory = path.resolve(projectRoot, ANDROID_RES_PATH, MIPMAP_ANYDPI_V26);
-  await fs.ensureDir(anyDpiV26Directory);
+  await mkdir(anyDpiV26Directory, { recursive: true });
   const launcherPath = path.resolve(anyDpiV26Directory, `ic_launcher_${toSnakeCase(name)}.xml`);
-  await fs.writeFile(launcherPath, icLauncherXmlString);
+  await writeFile(launcherPath, icLauncherXmlString);
 }

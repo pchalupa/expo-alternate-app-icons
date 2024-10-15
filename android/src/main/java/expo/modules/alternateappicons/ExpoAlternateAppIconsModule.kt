@@ -9,6 +9,8 @@ import expo.modules.kotlin.modules.ModuleDefinition
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
+const val MAIN_ACTIVITY_NAME = ".MainActivity"
+
 class ExpoAlternateAppIconsModule : Module() {
   override fun definition() = ModuleDefinition {
     Name("ExpoAlternateAppIcons")
@@ -24,17 +26,17 @@ class ExpoAlternateAppIconsModule : Module() {
   private fun getAppIconName(): String? {
     val activityName = appContext.activityProvider?.currentActivity?.componentName?.shortClassName
 
-    if(activityName !== null && !activityName.startsWith(".MainActivity") || activityName == ".MainActivity") return null
+    if(activityName !== null && !activityName.startsWith(MAIN_ACTIVITY_NAME) || activityName == MAIN_ACTIVITY_NAME) return null
 
-    return activityName?.substring(13)
+    return activityName?.substring(MAIN_ACTIVITY_NAME.length)
   }
 
   private suspend fun setAlternateAppIcon(icon: String?): String? = withContext(Dispatchers.Main) {
     val currentActivityComponent = appContext.activityProvider?.currentActivity?.componentName
 
-    if (currentActivityComponent == null || !currentActivityComponent.shortClassName.startsWith(".MainActivity")) return@withContext null
+    if (currentActivityComponent == null || !currentActivityComponent.shortClassName.startsWith(MAIN_ACTIVITY_NAME)) return@withContext null
 
-    val newActivityName = ".MainActivity${icon ?: ""}"
+    val newActivityName = "$MAIN_ACTIVITY_NAME${icon ?: ""}"
 
     if (currentActivityComponent.shortClassName == newActivityName) return@withContext icon
 

@@ -1,3 +1,39 @@
+# 1.0.0 (Tue Oct 15 2024)
+
+#### 💥 Breaking Change
+
+- feat!: add android support [#101](https://github.com/pchalupa/expo-alternate-app-icons/pull/101) ([@pchalupa](https://github.com/pchalupa) [@riccardo-welld](https://github.com/riccardo-welld) [@INDAPP](https://github.com/INDAPP))
+
+#### 🐛 Bug Fix
+
+- ci: use deploy key [#95](https://github.com/pchalupa/expo-alternate-app-icons/pull/95) ([@pchalupa](https://github.com/pchalupa))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump expo-modules-core from 1.12.24 to 1.12.25 [#97](https://github.com/pchalupa/expo-alternate-app-icons/pull/97) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump auto from 11.1.6 to 11.2.1 [#96](https://github.com/pchalupa/expo-alternate-app-icons/pull/96) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump expo-module-scripts from 3.4.1 to 3.5.2 [#75](https://github.com/pchalupa/expo-alternate-app-icons/pull/75) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump expo-modules-core from 1.11.13 to 1.12.24 [#89](https://github.com/pchalupa/expo-alternate-app-icons/pull/89) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump fast-xml-parser from 4.3.4 to 4.4.1 in /example [#81](https://github.com/pchalupa/expo-alternate-app-icons/pull/81) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump micromatch from 4.0.5 to 4.0.8 [#85](https://github.com/pchalupa/expo-alternate-app-icons/pull/85) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump fast-xml-parser from 4.3.1 to 4.4.1 [#80](https://github.com/pchalupa/expo-alternate-app-icons/pull/80) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps-dev): bump prettier from 3.2.5 to 3.3.3 [#79](https://github.com/pchalupa/expo-alternate-app-icons/pull/79) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps-dev): bump @auto-it/conventional-commits from 11.1.6 to 11.2.1 [#86](https://github.com/pchalupa/expo-alternate-app-icons/pull/86) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump @auto-it/npm from 11.1.6 to 11.2.1 [#87](https://github.com/pchalupa/expo-alternate-app-icons/pull/87) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump serve-static from 1.15.0 to 1.16.2 [#90](https://github.com/pchalupa/expo-alternate-app-icons/pull/90) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump micromatch from 4.0.5 to 4.0.8 in /example [#88](https://github.com/pchalupa/expo-alternate-app-icons/pull/88) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump body-parser from 1.20.2 to 1.20.3 [#91](https://github.com/pchalupa/expo-alternate-app-icons/pull/91) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump serve-static from 1.15.0 to 1.16.2 in /example [#92](https://github.com/pchalupa/expo-alternate-app-icons/pull/92) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- [@riccardo-welld](https://github.com/riccardo-welld)
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+- Riccardo Pizzoni ([@INDAPP](https://github.com/INDAPP))
+
+---
+
 # 0.1.11 (Fri Oct 04 2024)
 
 #### 🐛 Bug Fix

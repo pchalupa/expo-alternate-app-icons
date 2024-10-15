@@ -6,7 +6,7 @@ Expo Alternate App Icons is a library that allows you to easily switch between d
 
 | Android Device | Android Emulator | iOS Device | iOS Simulator | Web |
 | -------------- | ---------------- | ---------- | ------------- | --- |
-| ❌             | ❌               | ✅         | ✅            | ❌  |
+| ✅             | ✅               | ✅         | ✅            | ❌  |
 
 ## Introduction
 
@@ -23,37 +23,69 @@ Customizing app icons can be a valuable way to provide users with a personalized
 To get started, install the library using Expo CLI:
 
 ```sh
-expo install expo-alternate-app-icons
+npx expo install expo-alternate-app-icons
 ```
+
+> Ensure your project is running Expo SDK 44+.
 
 ## How To Use
 
-This package contains an Expo Plugin that copies your alternative icons to the Xcode project.
+This package contains an Expo Plugin that copies your alternative icons to native projects.
 
 1. Add `expo-alternate-app-icons` to the plugins array inside your [app.json](https://docs.expo.dev/versions/latest/config/app/).
-2. The second item in the array accepts an array with paths to your alternate icons.
+2. The second item in the array accepts an array with details about your alternate icons.
+3. [Prebuild](https://docs.expo.dev/workflow/prebuild/) a project using `npx expo prebuild --clean` to apply the plugin changes.
 
-```json5
+```json
 // app.json
 {
   // ...
-  plugins: [
+  "plugins": [
     // ...
     [
-      'expo-alternate-app-icons', // add "expo-alternate-app-icons" to the plugins array
-      ['./assets/icon-a.png', './assets/icon-b.png', './assets/icon-c.png'], // array with paths to the icons
-    ],
-  ],
+      "expo-alternate-app-icons",
+      [
+        {
+          "name": "IconA", // The name of the alternate icon
+          "ios": "./assets/icon-a.png", // Path to the iOS app icon
+          "android": {
+            "foregroundImage": "./assets/icon-a-foreground.png", // Path to Android foreground image
+            "backgroundColor": "#001413" // Background color for Android adaptive icon
+          }
+        },
+        {
+          "name": "IconB",
+          "ios": "./assets/icon-b.png",
+          "android": {
+            "foregroundImage": "./assets/icon-b-foreground.png",
+            "backgroundColor": "#001413"
+          }
+        },
+        {
+          "name": "IconC",
+          "ios": "./assets/icon-c.png",
+          "android": {
+            "foregroundImage": "./assets/icon-c-foreground.png",
+            "backgroundColor": "#001413"
+          }
+        }
+      ]
+    ]
+  ]
 }
 ```
 
 ### Icons
 
-Your icons should follow the same format as your [default app icon](https://docs.expo.dev/develop/user-interface/app-icons/#ios).
+Your icons should follow the same format as your [default app icon](https://docs.expo.dev/develop/user-interface/splash-screen-and-app-icon/#export-the-icon-image-as-a-png).
 
-- Use a **.png** file.
-- Square format with resolution **1024x1024 px**.
-- Without transparency layer.
+- Use a **.png** file
+- Square format with resolution **1024x1024 px**
+- iOS
+  - Without transparency layer
+- Android - Adaptive icon
+  - Foreground image
+  - Background fill color
 
 ### API Documentation
 
@@ -67,7 +99,7 @@ const supportsAlternateIcons: boolean;
 
 #### Set Alternate App Icon
 
-To set app icon to **icon-a.png**, use `setAlternateAppIcon("icon-a")`. This function takes exact icon name without suffix.
+To set app icon to **IconA**, use `setAlternateAppIcon("IconA")`. This function takes icon name as argument.
 
 To reset the app icon to the default pass `null` like `setAlternateAppIcon(null)`.
 
@@ -91,4 +123,13 @@ Reset app icon to the default one.
 
 ```ts
 function resetAppIcon(): Promise<void>;
+```
+
+## Development
+
+### Expo Config Plugin
+
+```shell
+npm run build plugin # Start build on save
+cd example && npx expo prebuild # Execute the config plugin
 ```

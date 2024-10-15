@@ -31,10 +31,11 @@
   "devDependencies": {
     "@auto-it/conventional-commits": "^11.0.4",
     "@auto-it/npm": "^11.0.4",
+    "@types/fs-extra": "^11.0.4",
     "auto": "^11.0.4",
     "expo-module-scripts": "^3.4.1",
     "expo-modules-core": "^1.11.8",
-    "prettier": "^3.0.3"
+    "prettier": "^3.2.5"
   },
   "peerDependencies": {
     "expo": "*",

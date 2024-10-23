@@ -35,9 +35,7 @@ class ExpoAlternateAppIconsModule : Module() {
 
     if (currentIconName == icon) return@withContext icon
 
-    val newActivityName = "$MAIN_ACTIVITY_NAME${icon ?: ""}"
-    val packageName = currentActivityComponent.packageName
-    val newActivityComponent = ComponentName(packageName, "$packageName.$newActivityName")
+    val newActivityComponent = replaceMainActivitySimpleName(currentActivityComponent, icon)
 
     appContext.reactContext?.packageManager?.run {
       setComponentEnabledSetting(newActivityComponent, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP)
@@ -57,5 +55,14 @@ class ExpoAlternateAppIconsModule : Module() {
         else -> null
       }
     }
+
+  private fun replaceMainActivitySimpleName(component: ComponentName, suffix: String?): ComponentName {
+    val newActivitySimpleName = "$MAIN_ACTIVITY_NAME${suffix ?: ""}"
+    val identifiers = component.className.split('.').toMutableList()
+    identifiers[identifiers.size - 1] = newActivitySimpleName
+    val packageName = component.packageName
+    val newActivityName = identifiers.joinToString(".")
+    return ComponentName(packageName, newActivityName)
+  }
 
 }

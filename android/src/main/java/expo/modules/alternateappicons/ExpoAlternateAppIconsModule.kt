@@ -2,14 +2,13 @@ package expo.modules.alternateappicons
 
 import android.content.ComponentName
 import android.content.pm.PackageManager
-import expo.modules.kotlin.Promise
 import expo.modules.kotlin.functions.Coroutine
 import expo.modules.kotlin.modules.Module
 import expo.modules.kotlin.modules.ModuleDefinition
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-const val MAIN_ACTIVITY_NAME = ".MainActivity"
+const val MAIN_ACTIVITY_NAME = "MainActivity"
 
 class ExpoAlternateAppIconsModule : Module() {
   override fun definition() = ModuleDefinition {
@@ -24,24 +23,19 @@ class ExpoAlternateAppIconsModule : Module() {
   }
 
   private fun getAppIconName(): String? {
-    val activityName = appContext.activityProvider?.currentActivity?.componentName?.shortClassName
+    val currentActivityComponent = appContext.activityProvider!!.currentActivity!!.componentName!!
 
-    if(activityName !== null && !activityName.startsWith(MAIN_ACTIVITY_NAME) || activityName == MAIN_ACTIVITY_NAME) return null
-
-    return activityName?.substring(MAIN_ACTIVITY_NAME.length)
+    return retrieveIconNameFromComponent(currentActivityComponent)
   }
 
   private suspend fun setAlternateAppIcon(icon: String?): String? = withContext(Dispatchers.Main) {
-    val currentActivityComponent = appContext.activityProvider?.currentActivity?.componentName
+    val currentActivityComponent = appContext.activityProvider!!.currentActivity!!.componentName
 
-    if (currentActivityComponent == null || !currentActivityComponent.shortClassName.startsWith(MAIN_ACTIVITY_NAME)) return@withContext null
+    val currentIconName = retrieveIconNameFromComponent(currentActivityComponent)
 
-    val newActivityName = "$MAIN_ACTIVITY_NAME${icon ?: ""}"
+    if (currentIconName == icon) return@withContext icon
 
-    if (currentActivityComponent.shortClassName == newActivityName) return@withContext icon
-
-    val packageName = currentActivityComponent.packageName;
-    val newActivityComponent = ComponentName(packageName, "$packageName$newActivityName")
+    val newActivityComponent = replaceMainActivitySimpleName(currentActivityComponent, icon)
 
     appContext.reactContext?.packageManager?.run {
       setComponentEnabledSetting(newActivityComponent, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP)
@@ -50,4 +44,25 @@ class ExpoAlternateAppIconsModule : Module() {
 
     return@withContext icon
   }
+
+  private fun getSimpleName(component: ComponentName): String = component.className.split('.').last()
+
+  private fun retrieveIconNameFromComponent(component: ComponentName): String? =
+    with(getSimpleName(component)) {
+      when  {
+        equals(MAIN_ACTIVITY_NAME) -> null
+        startsWith(MAIN_ACTIVITY_NAME) -> substring(MAIN_ACTIVITY_NAME.length)
+        else -> null
+      }
+    }
+
+  private fun replaceMainActivitySimpleName(component: ComponentName, suffix: String?): ComponentName {
+    val newActivitySimpleName = "$MAIN_ACTIVITY_NAME${suffix ?: ""}"
+    val identifiers = component.className.split('.').toMutableList()
+    identifiers[identifiers.size - 1] = newActivitySimpleName
+    val packageName = component.packageName
+    val newActivityName = identifiers.joinToString(".")
+    return ComponentName(packageName, newActivityName)
+  }
+
 }

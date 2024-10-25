@@ -1,3 +1,15 @@
+# 1.0.2 (Fri Oct 25 2024)
+
+#### 🐛 Bug Fix
+
+- fix(android): handle fully qualified name for activity classes [#107](https://github.com/pchalupa/expo-alternate-app-icons/pull/107) ([@INDAPP](https://github.com/INDAPP))
+
+#### Authors: 1
+
+- Riccardo Pizzoni ([@INDAPP](https://github.com/INDAPP))
+
+---
+
 # 1.0.1 (Fri Oct 25 2024)
 
 #### 🐛 Bug Fix

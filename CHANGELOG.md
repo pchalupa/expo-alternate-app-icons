@@ -1,3 +1,22 @@
+# 1.0.1 (Fri Oct 25 2024)
+
+#### 🐛 Bug Fix
+
+- fix(android): jvm target version [#106](https://github.com/pchalupa/expo-alternate-app-icons/pull/106) ([@pchalupa](https://github.com/pchalupa))
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump ws from 6.2.2 to 6.2.3 in /example in the npm_and_yarn group [#104](https://github.com/pchalupa/expo-alternate-app-icons/pull/104) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump the npm_and_yarn group with 4 updates [#105](https://github.com/pchalupa/expo-alternate-app-icons/pull/105) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore: update example project with expo sdk 51 [#103](https://github.com/pchalupa/expo-alternate-app-icons/pull/103) ([@pchalupa](https://github.com/pchalupa))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 1.0.0 (Tue Oct 15 2024)
 
 #### 💥 Breaking Change

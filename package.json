@@ -29,17 +29,16 @@
     "open:android": "open -a \"Android Studio\" example/android"
   },
   "devDependencies": {
-    "@auto-it/conventional-commits": "^11.0.4",
-    "@auto-it/npm": "^11.0.4",
-    "@types/fs-extra": "^11.0.4",
-    "auto": "^11.0.4",
-    "expo-module-scripts": "^3.4.1",
-    "expo-modules-core": "^1.11.8",
+    "@auto-it/conventional-commits": "^11.3.0",
+    "@auto-it/npm": "^11.3.0",
+    "auto": "^11.3.0",
+    "expo-module-scripts": "^3.5.2",
+    "expo-modules-core": "^1.12.26",
     "prettier": "^3.2.5"
   },
   "peerDependencies": {
-    "expo": "*",
-    "react": "*",
-    "react-native": "*"
+    "expo": ">=51",
+    "react": ">=18.2.0",
+    "react-native": ">=0.74.5"
   }
 }

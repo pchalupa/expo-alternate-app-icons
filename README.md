@@ -26,7 +26,7 @@ To get started, install the library using Expo CLI:
 npx expo install expo-alternate-app-icons
 ```
 
-> Ensure your project is running Expo SDK 44+.
+> Ensure your project is running Expo SDK 51+.
 
 ## How To Use
 

@@ -1,3 +1,25 @@
+# 1.1.0 (Thu Nov 14 2024)
+
+#### 🚀 Enhancement
+
+- chore: bump expo-modules-core [#113](https://github.com/pchalupa/expo-alternate-app-icons/pull/113) ([@pchalupa](https://github.com/pchalupa))
+
+#### 🐛 Bug Fix
+
+- chore(example): enable new architecture [#108](https://github.com/pchalupa/expo-alternate-app-icons/pull/108) ([@pchalupa](https://github.com/pchalupa))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump @auto-it/conventional-commits from 11.2.1 to 11.3.0 [#109](https://github.com/pchalupa/expo-alternate-app-icons/pull/109) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump auto from 11.2.1 to 11.3.0 [#111](https://github.com/pchalupa/expo-alternate-app-icons/pull/111) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 1.0.2 (Fri Oct 25 2024)
 
 #### 🐛 Bug Fix

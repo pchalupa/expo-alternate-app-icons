@@ -32,7 +32,7 @@
     "@auto-it/conventional-commits": "^11.3.0",
     "@auto-it/npm": "^11.3.0",
     "auto": "^11.3.0",
-    "expo-module-scripts": "^3.5.2",
+    "expo-module-scripts": "^4.0.2",
     "expo-modules-core": "^1.12.26",
     "prettier": "^3.2.5"
   },

@@ -33,7 +33,7 @@
     "@auto-it/npm": "^11.3.0",
     "auto": "^11.3.0",
     "expo-module-scripts": "^3.5.2",
-    "expo-modules-core": "^1.12.26",
+    "expo-modules-core": "^2.1.1",
     "prettier": "^3.2.5"
   },
   "peerDependencies": {

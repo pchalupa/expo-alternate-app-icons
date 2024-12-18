@@ -2,7 +2,7 @@ import { writeFile } from 'fs/promises';
 import { join } from 'path';
 
 export async function writeContentsJson(
-  filename: string,
+  filename: string | Record<string, string>,
   assetPath: string,
   width: number,
   height: number,
@@ -10,14 +10,31 @@ export async function writeContentsJson(
   const path = join(assetPath, 'Contents.json');
   const payload = JSON.stringify(
     {
-      images: [
-        {
-          filename,
-          idiom: 'universal',
-          platform: 'ios',
-          size: `${width}x${height}`,
-        },
-      ],
+      images:
+        typeof filename === 'string'
+          ? [
+              {
+                filename,
+                idiom: 'universal',
+                platform: 'ios',
+                size: `${width}x${height}`,
+              },
+            ]
+          : Object.entries(filename).map(([type, name]) => ({
+              filename: name,
+              idiom: 'universal',
+              platform: 'ios',
+              size: `${width}x${height}`,
+              appearances:
+                type !== 'light'
+                  ? [
+                      {
+                        appearance: 'luminosity',
+                        value: type,
+                      },
+                    ]
+                  : undefined,
+            })),
       info: {
         author: 'expo',
         version: 1,

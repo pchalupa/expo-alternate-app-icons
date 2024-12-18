@@ -47,7 +47,11 @@ This package contains an Expo Plugin that copies your alternative icons to nativ
       [
         {
           "name": "IconA", // The name of the alternate icon
-          "ios": "./assets/icon-a.png", // Path to the iOS app icon
+          "ios": {
+            "light":"./assets/icon-a.png",
+            "dark":"./assets/icon-a-dark.png",
+            "tinted":"./assets/icon-a-tinted.png"
+          }, // Path to the iOS app icons or if you do not want to use the variants enter directly the path
           "android": {
             "foregroundImage": "./assets/icon-a-foreground.png", // Path to Android foreground image
             "backgroundColor": "#001413" // Background color for Android adaptive icon
@@ -55,7 +59,7 @@ This package contains an Expo Plugin that copies your alternative icons to nativ
         },
         {
           "name": "IconB",
-          "ios": "./assets/icon-b.png",
+          "ios": "./assets/icon-b.png",  // Without variants,
           "android": {
             "foregroundImage": "./assets/icon-b-foreground.png",
             "backgroundColor": "#001413"

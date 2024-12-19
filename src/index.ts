@@ -44,7 +44,7 @@ export async function setAlternateAppIcon(name: AlternateAppIcons | null): Promi
  * const iconName = getAppIconName();
  * console.log(`The active app icon is: ${iconName}`);
  */
-export function getAppIconName(): string | null {
+export function getAppIconName(): AlternateAppIcons | null {
   return ExpoAlternateAppIconsModule.getAppIconName();
 }
 

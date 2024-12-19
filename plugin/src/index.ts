@@ -6,6 +6,7 @@ import { withXcodeProjectUpdate } from './withXcodeProjectUpdate';
 import { AlternateIcon } from './types';
 import { withAdaptiveIconsGenerator } from './withAdaptiveIconsGenerator';
 import { parse } from 'path';
+import { generateTypeIconsFile } from './generateTypeIconsFIle';
 
 const isPathArray = (alternateIcons: AlternateIcon[] | string[]): alternateIcons is string[] =>
   alternateIcons.some((icon) => typeof icon === 'string');
@@ -26,6 +27,7 @@ export default function withAlternateAppIcons(
   }
 
   const iconNames = alternateIcons.map((icon) => icon.name);
+  generateTypeIconsFile(iconNames);
 
   config = withAlternateAppIconsGenerator(config, alternateIcons);
   config = withXcodeProjectUpdate(config, iconNames);
@@ -42,6 +44,6 @@ function mapToAlternateIcon(path: string): AlternateIcon {
     ios: path,
     android: {
       foregroundImage: path,
-    }
-  }
+    },
+  };
 }

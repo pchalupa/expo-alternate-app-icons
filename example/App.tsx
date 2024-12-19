@@ -12,12 +12,13 @@ import { icons } from './App.preset';
 import { styles } from './App.styles';
 import { Button } from './src/Button';
 import { IconButton } from './src/IconButton';
+import { AlternateAppIcons } from 'expo-alternate-app-icons/AlternateAppIconsType';
 
 export default function App() {
   const [currentAppIconName, setCurrentAppIconName] = useState<string | null>(getAppIconName());
 
   const handleSetAppIcon = useCallback(
-    async (iconName: string) => {
+    async (iconName: AlternateAppIcons) => {
       try {
         const newAppIconName = await setAlternateAppIcon(iconName);
 

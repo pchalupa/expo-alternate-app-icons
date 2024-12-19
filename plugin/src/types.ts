@@ -1,10 +1,12 @@
 import type { ExpoConfig } from '@expo/config-types';
 
 type AndroidConfig = Exclude<ExpoConfig['android'], undefined>;
-type iOSIcon = string | Record<iOSIconVariant, string>;
-export type iOSIconVariant = 'light' | 'dark' | 'tinted';
+type iOSConfig = Exclude<ExpoConfig['ios'], undefined>;
+export type iOSVariantsIcon = Record<iOSVariants, string>;
+export type iOSVariants = 'light' | 'dark' | 'tinted';
+
 export type AlternateIcon = {
   name: string;
-  ios: iOSIcon;
+  ios: iOSConfig['icon'] | iOSVariantsIcon;
   android: AndroidConfig['adaptiveIcon'];
 };

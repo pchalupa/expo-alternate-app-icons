@@ -42,6 +42,6 @@ function mapToAlternateIcon(path: string): AlternateIcon {
     ios: path,
     android: {
       foregroundImage: path,
-    }
-  }
+    },
+  };
 }

@@ -1,7 +1,7 @@
 import { type ExpoConfig } from '@expo/config-types';
 import { withDangerousMod } from 'expo/config-plugins';
 
-import { generateUniversalIcon } from './generateUniversalIcon';
+import { generateUniversalIcon, generateUniversalVariantsIcon } from './generateUniversalIcon';
 import { AlternateIcon } from './types';
 
 export function withAlternateAppIconsGenerator(
@@ -15,10 +15,22 @@ export function withAlternateAppIconsGenerator(
         const { ios: iconPath, name } = alternateIcon;
         if (!iconPath) break;
         const projectRoot = config.modRequest.projectRoot;
-        await generateUniversalIcon(name, projectRoot, iconPath, {
-          width: 1024,
-          height: 1024,
-        });
+
+        if (typeof iconPath === 'string') {
+          await generateUniversalIcon(name, projectRoot, iconPath, {
+            width: 1024,
+            height: 1024,
+          });
+        } else if (iconPath?.dark != null && iconPath?.light != null && iconPath?.tinted != null) {
+          await generateUniversalVariantsIcon(name, projectRoot, iconPath, {
+            width: 1024,
+            height: 1024,
+          });
+        } else {
+          throw new Error(
+            `Invalid alternate icon configuration for "${alternateIcon.name}". Ensure the iconPath is either a string for a single icon or an object containing "dark", "light", and "tinted" variants.`,
+          );
+        }
       }
 
       return config;

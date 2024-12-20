@@ -1,5 +1,7 @@
 import ExpoAlternateAppIconsModule from './ExpoAlternateAppIconsModule';
-import { AlternateAppIcons } from './AlternateAppIconsType';
+import { type AlternateAppIcons } from './AlternateAppIconsType';
+export { type AlternateAppIcons } from './AlternateAppIconsType';
+
 /**
  * A boolean value indicating whether the current device supports alternate app icons.
  *

@@ -1,3 +1,22 @@
+# 1.2.0 (Sat Dec 21 2024)
+
+#### 🚀 Enhancement
+
+- Add support for dark and tinted icon variants on iOS [#135](https://github.com/pchalupa/expo-alternate-app-icons/pull/135) ([@AntonioLoco](https://github.com/AntonioLoco) [@pchalupa](https://github.com/pchalupa))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump prettier from 3.4.1 to 3.4.2 [#130](https://github.com/pchalupa/expo-alternate-app-icons/pull/130) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump prettier from 3.3.3 to 3.4.1 [#128](https://github.com/pchalupa/expo-alternate-app-icons/pull/128) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Antonio Locorotondo ([@AntonioLoco](https://github.com/AntonioLoco))
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 1.1.0 (Thu Nov 14 2024)
 
 #### 🚀 Enhancement

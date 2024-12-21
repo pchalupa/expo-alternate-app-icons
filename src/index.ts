@@ -1,5 +1,6 @@
-import ExpoAlternateAppIconsModule from './ExpoAlternateAppIconsModule';
 import { type AlternateAppIcons } from './AlternateAppIconsType';
+import ExpoAlternateAppIconsModule from './ExpoAlternateAppIconsModule';
+
 export { type AlternateAppIcons } from './AlternateAppIconsType';
 
 /**

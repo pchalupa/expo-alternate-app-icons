@@ -2,7 +2,7 @@ import {
   AndroidConfig,
   ConfigPlugin,
   withAndroidColors,
-  withDangerousMod
+  withDangerousMod,
 } from '@expo/config-plugins';
 import { ExpoConfig } from '@expo/config-types';
 import { AlternateIcon } from './types';
@@ -13,10 +13,10 @@ const { Colors } = AndroidConfig;
 
 export function withAdaptiveIconsGenerator(
   config: ExpoConfig,
-  alternateIcons: AlternateIcon[]
+  alternateIcons: AlternateIcon[],
 ): ExpoConfig {
   for (const alternateIcon of alternateIcons) {
-    withAndroidAdaptiveIconColors(config, alternateIcon)
+    withAndroidAdaptiveIconColors(config, alternateIcon);
   }
   return withDangerousMod(config, [
     'android',
@@ -30,7 +30,7 @@ export function withAdaptiveIconsGenerator(
         await generateAdaptiveIcon(name, projectRoot, adaptiveIcon);
       }
       return config;
-    }
+    },
   ]);
 }
 
@@ -38,7 +38,7 @@ const withAndroidAdaptiveIconColors: ConfigPlugin<AlternateIcon> = (config, alte
   return withAndroidColors(config, (config) => {
     config.modResults = Colors.assignColorValue(config.modResults, {
       value: alternateIcon.android?.backgroundColor ?? '#FFFFFF',
-      name: `iconBackground${toPascalCase(alternateIcon.name)}`
+      name: `iconBackground${toPascalCase(alternateIcon.name)}`,
     });
     return config;
   });

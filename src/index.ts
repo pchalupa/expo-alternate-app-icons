@@ -1,4 +1,7 @@
+import { type AlternateAppIcons } from './AlternateAppIconsType';
 import ExpoAlternateAppIconsModule from './ExpoAlternateAppIconsModule';
+
+export { type AlternateAppIcons } from './AlternateAppIconsType';
 
 /**
  * A boolean value indicating whether the current device supports alternate app icons.
@@ -29,7 +32,8 @@ export const supportsAlternateIcons: boolean = ExpoAlternateAppIconsModule.suppo
  * // Reset to the default app icon.
  * const resetResult = await setAlternateAppIcon(null);
  */
-export async function setAlternateAppIcon(name: string | null): Promise<string | null> {
+
+export async function setAlternateAppIcon(name: AlternateAppIcons | null): Promise<string | null> {
   return ExpoAlternateAppIconsModule.setAlternateAppIcon(name);
 }
 
@@ -43,7 +47,7 @@ export async function setAlternateAppIcon(name: string | null): Promise<string |
  * const iconName = getAppIconName();
  * console.log(`The active app icon is: ${iconName}`);
  */
-export function getAppIconName(): string | null {
+export function getAppIconName(): AlternateAppIcons | null {
   return ExpoAlternateAppIconsModule.getAppIconName();
 }
 

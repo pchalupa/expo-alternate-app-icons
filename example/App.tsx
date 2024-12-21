@@ -3,6 +3,7 @@ import {
   resetAppIcon,
   getAppIconName,
   supportsAlternateIcons,
+  type AlternateAppIcons,
 } from 'expo-alternate-app-icons';
 import { StatusBar } from 'expo-status-bar';
 import { useCallback, useState } from 'react';
@@ -17,7 +18,7 @@ export default function App() {
   const [currentAppIconName, setCurrentAppIconName] = useState<string | null>(getAppIconName());
 
   const handleSetAppIcon = useCallback(
-    async (iconName: string) => {
+    async (iconName: AlternateAppIcons) => {
       try {
         const newAppIconName = await setAlternateAppIcon(iconName);
 

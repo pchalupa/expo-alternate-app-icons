@@ -32,7 +32,11 @@
         [
           {
             "name": "IconA",
-            "ios": "./assets/icon-a.png",
+            "ios":{
+              "light": "./assets/icon-a.png",
+              "dark": "./assets/icon-b.png",
+              "tinted": "./assets/icon-c.png"
+            },
             "android": {
               "foregroundImage": "./assets/icon-a-foreground.png",
               "backgroundColor": "#001413"

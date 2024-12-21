@@ -10,16 +10,13 @@ const { default: renderIntentFilters, getIntentFilters } = AndroidConfig.IntentF
 type ActivityAlias = AndroidConfig.Manifest.ManifestActivity;
 
 type ApplicationWithAliases = AndroidConfig.Manifest.ManifestApplication & {
-  ['activity-alias']?: ActivityAlias[],
-}
+  ['activity-alias']?: ActivityAlias[];
+};
 
-export function withAndroidManifestUpdate(
-  config: ExpoConfig,
-  alternateIconNames: string[],
-) {
+export function withAndroidManifestUpdate(config: ExpoConfig, alternateIconNames: string[]) {
   const intentFilters = getIntentFilters(config);
 
-  config = withAndroidManifest(config, (config, ) => {
+  config = withAndroidManifest(config, (config) => {
     const mainApplication = getMainApplicationOrThrow(config.modResults);
 
     for (const name of alternateIconNames) {
@@ -52,11 +49,11 @@ function addActivityAliasToMainApplication(
       },
       ...renderIntentFilters(intentFilters ?? []),
     ],
-  }
+  };
 
   if (mainApplication['activity-alias']) {
     const currentIndex = mainApplication['activity-alias'].findIndex(
-      (e: any) => e.$['android:name'] === activityAlias.$['android:name']
+      (e: any) => e.$['android:name'] === activityAlias.$['android:name'],
     );
     if (currentIndex >= 0) {
       mainApplication['activity-alias'][currentIndex] = activityAlias;

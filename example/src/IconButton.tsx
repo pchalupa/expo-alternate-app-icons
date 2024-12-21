@@ -2,11 +2,12 @@ import { useCallback } from 'react';
 import { Image, type ImageRequireSource, TouchableOpacity } from 'react-native';
 
 import { styles } from './IconButton.styles';
+import { AlternateAppIcons } from 'expo-alternate-app-icons/AlternateAppIconsType';
 
 interface IconButtonProps {
   source: ImageRequireSource;
-  name: string;
-  onPress: (name: string) => void;
+  name: AlternateAppIcons;
+  onPress: (name: AlternateAppIcons) => void;
   selected: boolean;
 }
 

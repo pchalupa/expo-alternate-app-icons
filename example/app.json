@@ -12,6 +12,7 @@
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": ["**/*"],
+    "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "expo.modules.alternateappicons.example"
@@ -32,7 +33,7 @@
         [
           {
             "name": "IconA",
-            "ios":{
+            "ios": {
               "light": "./assets/icon-a.png",
               "dark": "./assets/icon-b.png",
               "tinted": "./assets/icon-c.png"
@@ -59,17 +60,6 @@
             }
           }
         ]
-      ],
-      [
-        "expo-build-properties",
-        {
-          "ios": {
-            "newArchEnabled": true
-          },
-          "android": {
-            "newArchEnabled": true
-          }
-        }
       ]
     ]
   }

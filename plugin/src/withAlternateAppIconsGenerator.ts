@@ -2,7 +2,7 @@ import { type ExpoConfig } from '@expo/config-types';
 import { withDangerousMod } from 'expo/config-plugins';
 
 import { generateUniversalIcon, generateUniversalVariantsIcon } from './generateUniversalIcon';
-import { AlternateIcon } from './types';
+import { AlternateIcon, isIosVariantsIcon } from './types';
 
 export function withAlternateAppIconsGenerator(
   config: ExpoConfig,
@@ -21,7 +21,7 @@ export function withAlternateAppIconsGenerator(
             width: 1024,
             height: 1024,
           });
-        } else if (iconPath?.dark != null && iconPath?.light != null && iconPath?.tinted != null) {
+        } else if (isIosVariantsIcon(iconPath)) {
           await generateUniversalVariantsIcon(name, projectRoot, iconPath, {
             width: 1024,
             height: 1024,

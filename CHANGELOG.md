@@ -1,3 +1,19 @@
+# 1.3.0 (Sat Jan 04 2025)
+
+#### 🚀 Enhancement
+
+- feat: upgrade to expo 52 [#138](https://github.com/pchalupa/expo-alternate-app-icons/pull/138) ([@pchalupa](https://github.com/pchalupa))
+
+#### 📝 Documentation
+
+- docs: add pr template [#139](https://github.com/pchalupa/expo-alternate-app-icons/pull/139) ([@pchalupa](https://github.com/pchalupa))
+
+#### Authors: 1
+
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 1.2.0 (Sat Dec 21 2024)
 
 #### 🚀 Enhancement

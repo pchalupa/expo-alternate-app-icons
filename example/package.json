@@ -1,6 +1,7 @@
 {
   "name": "expo-alternate-app-icons-example",
   "version": "1.0.0",
+  "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start --dev-client",
@@ -10,19 +11,18 @@
     "prebuild": "expo prebuild"
   },
   "dependencies": {
-    "expo": "~51.0.38",
-    "expo-status-bar": "~1.12.1",
-    "react": "18.2.0",
-    "react-native": "0.74.5",
-    "expo-system-ui": "~3.0.7",
-    "expo-build-properties": "~0.12.5"
+    "expo": "~52.0.23",
+    "expo-status-bar": "~2.0.0",
+    "react": "18.3.1",
+    "react-native": "0.76.5",
+    "expo-system-ui": "~4.0.6",
+    "expo-build-properties": "~0.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.24.4",
     "babel-plugin-module-resolver": "^5.0.2",
     "typescript": "^5.3.0"
   },
-  "private": true,
   "expo": {
     "autolinking": {
       "nativeModulesDir": ".."

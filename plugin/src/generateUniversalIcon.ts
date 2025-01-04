@@ -1,6 +1,6 @@
-import { generateImageAsync } from '@expo/image-utils';
 import { IOSConfig } from 'expo/config-plugins';
 import { writeFile, mkdir } from 'fs/promises';
+import sharp from 'sharp';
 import { join, parse } from 'path';
 
 import { iOSVariants, iOSVariantsIcon } from './types';
@@ -16,18 +16,13 @@ export async function generateUniversalIcon(
   const { base: filename } = parse(src);
   const appIconSetPath = join(iosProjectPath, `Images.xcassets/${name}.appiconset`);
   const appIconPath = join(appIconSetPath, filename);
-  const { source } = await generateImageAsync(
-    { projectRoot, cacheType: `alternate-app-icon-${name}` },
-    {
-      src,
-      name,
-      removeTransparency: true,
-      backgroundColor: '#ffffff',
-      resizeMode: 'cover',
+  const source = await sharp(join(projectRoot, src))
+    .resize({
       width: options.width,
       height: options.height,
-    },
-  );
+      fit: 'cover',
+    })
+    .toBuffer();
   try {
     await mkdir(appIconSetPath, { recursive: true });
     await writeFile(appIconPath, source);
@@ -52,18 +47,15 @@ export async function generateUniversalVariantsIcon(
     filename = filename.replace('.', `-${variant}.`);
     filenames[variant] = filename;
     const appIconPath = join(appIconSetPath, filename);
-    const { source } = await generateImageAsync(
-      { projectRoot, cacheType: `alternate-app-icon-${name}-${variant}` },
-      {
-        src: sources[variant],
-        name: variant,
-        removeTransparency: true,
-        backgroundColor: '#ffffff',
-        resizeMode: 'cover',
+
+    const source = await sharp(join(projectRoot, sources[variant]))
+      .resize({
         width: options.width,
         height: options.height,
-      },
-    );
+        fit: 'cover',
+      })
+      .toBuffer();
+
     try {
       await mkdir(appIconSetPath, { recursive: true });
       await writeFile(appIconPath, source);

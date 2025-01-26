@@ -1,10 +1,10 @@
 import { IOSConfig } from 'expo/config-plugins';
 import { writeFile, mkdir } from 'fs/promises';
-import sharp from 'sharp';
 import { join, parse } from 'path';
 
 import { iOSVariants, iOSVariantsIcon } from './types';
 import { writeContentsJson, writeVariantsContentsJson } from './writeContentsJson';
+import { jimpAsync } from '@expo/image-utils/build/jimp';
 
 export async function generateUniversalIcon(
   name: string,
@@ -16,13 +16,23 @@ export async function generateUniversalIcon(
   const { base: filename } = parse(src);
   const appIconSetPath = join(iosProjectPath, `Images.xcassets/${name}.appiconset`);
   const appIconPath = join(appIconSetPath, filename);
-  const source = await sharp(join(projectRoot, src))
-    .resize({
-      width: options.width,
-      height: options.height,
-      fit: 'cover',
-    })
-    .toBuffer();
+
+  const iconPath = join(projectRoot, src);
+  const source = await jimpAsync(
+    {
+      input: iconPath,
+      originalInput: iconPath,
+    },
+    [
+      {
+        operation: 'resize',
+        fit: 'cover',
+        width: options.width,
+        height: options.height,
+      },
+    ],
+  );
+
   try {
     await mkdir(appIconSetPath, { recursive: true });
     await writeFile(appIconPath, source);
@@ -48,13 +58,21 @@ export async function generateUniversalVariantsIcon(
     filenames[variant] = filename;
     const appIconPath = join(appIconSetPath, filename);
 
-    const source = await sharp(join(projectRoot, sources[variant]))
-      .resize({
-        width: options.width,
-        height: options.height,
-        fit: 'cover',
-      })
-      .toBuffer();
+    const iconPath = join(projectRoot, sources[variant]);
+    const source = await jimpAsync(
+      {
+        input: iconPath,
+        originalInput: iconPath,
+      },
+      [
+        {
+          operation: 'resize',
+          fit: 'cover',
+          width: options.width,
+          height: options.height,
+        },
+      ],
+    );
 
     try {
       await mkdir(appIconSetPath, { recursive: true });

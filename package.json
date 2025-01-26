@@ -34,8 +34,7 @@
     "auto": "^11.3.0",
     "expo-module-scripts": "^4.0.2",
     "expo-modules-core": "^2.1.2",
-    "prettier": "^3.2.5",
-    "sharp": "^0.33.5"
+    "prettier": "^3.2.5"
   },
   "peerDependencies": {
     "expo": ">=52",

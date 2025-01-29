@@ -1,3 +1,21 @@
+# 1.3.1 (Wed Jan 29 2025)
+
+#### 🐛 Bug Fix
+
+- fix: ios transparency dark icons [#143](https://github.com/pchalupa/expo-alternate-app-icons/pull/143) ([@AntonioLoco](https://github.com/AntonioLoco))
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump undici from 6.21.0 to 6.21.1 in /example in the npm_and_yarn group [#147](https://github.com/pchalupa/expo-alternate-app-icons/pull/147) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump the npm_and_yarn group with 2 updates [#148](https://github.com/pchalupa/expo-alternate-app-icons/pull/148) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Antonio Locorotondo ([@AntonioLoco](https://github.com/AntonioLoco))
+
+---
+
 # 1.3.0 (Sat Jan 04 2025)
 
 #### 🚀 Enhancement

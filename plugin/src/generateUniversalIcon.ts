@@ -1,10 +1,10 @@
-import { generateImageAsync } from '@expo/image-utils';
 import { IOSConfig } from 'expo/config-plugins';
 import { writeFile, mkdir } from 'fs/promises';
 import { join, parse } from 'path';
 
 import { iOSVariants, iOSVariantsIcon } from './types';
 import { writeContentsJson, writeVariantsContentsJson } from './writeContentsJson';
+import { jimpAsync } from '@expo/image-utils/build/jimp';
 
 export async function generateUniversalIcon(
   name: string,
@@ -16,18 +16,23 @@ export async function generateUniversalIcon(
   const { base: filename } = parse(src);
   const appIconSetPath = join(iosProjectPath, `Images.xcassets/${name}.appiconset`);
   const appIconPath = join(appIconSetPath, filename);
-  const { source } = await generateImageAsync(
-    { projectRoot, cacheType: `alternate-app-icon-${name}` },
+
+  const iconPath = join(projectRoot, src);
+  const source = await jimpAsync(
     {
-      src,
-      name,
-      removeTransparency: true,
-      backgroundColor: '#ffffff',
-      resizeMode: 'cover',
-      width: options.width,
-      height: options.height,
+      input: iconPath,
+      originalInput: iconPath,
     },
+    [
+      {
+        operation: 'resize',
+        fit: 'cover',
+        width: options.width,
+        height: options.height,
+      },
+    ],
   );
+
   try {
     await mkdir(appIconSetPath, { recursive: true });
     await writeFile(appIconPath, source);
@@ -52,18 +57,23 @@ export async function generateUniversalVariantsIcon(
     filename = filename.replace('.', `-${variant}.`);
     filenames[variant] = filename;
     const appIconPath = join(appIconSetPath, filename);
-    const { source } = await generateImageAsync(
-      { projectRoot, cacheType: `alternate-app-icon-${name}-${variant}` },
+
+    const iconPath = join(projectRoot, sources[variant]);
+    const source = await jimpAsync(
       {
-        src: sources[variant],
-        name: variant,
-        removeTransparency: true,
-        backgroundColor: '#ffffff',
-        resizeMode: 'cover',
-        width: options.width,
-        height: options.height,
+        input: iconPath,
+        originalInput: iconPath,
       },
+      [
+        {
+          operation: 'resize',
+          fit: 'cover',
+          width: options.width,
+          height: options.height,
+        },
+      ],
     );
+
     try {
       await mkdir(appIconSetPath, { recursive: true });
       await writeFile(appIconPath, source);

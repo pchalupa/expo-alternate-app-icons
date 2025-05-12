@@ -1,3 +1,23 @@
+# 1.3.2 (Mon May 12 2025)
+
+#### 🐛 Bug Fix
+
+- chore: update expo sdk [#163](https://github.com/pchalupa/expo-alternate-app-icons/pull/163) ([@pchalupa](https://github.com/pchalupa))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump prettier from 3.5.2 to 3.5.3 [#158](https://github.com/pchalupa/expo-alternate-app-icons/pull/158) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump prettier from 3.5.1 to 3.5.2 [#157](https://github.com/pchalupa/expo-alternate-app-icons/pull/157) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump prettier from 3.5.0 to 3.5.1 [#152](https://github.com/pchalupa/expo-alternate-app-icons/pull/152) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump prettier from 3.4.2 to 3.5.0 [#150](https://github.com/pchalupa/expo-alternate-app-icons/pull/150) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 1.3.1 (Wed Jan 29 2025)
 
 #### 🐛 Bug Fix

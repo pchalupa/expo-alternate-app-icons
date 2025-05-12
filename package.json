@@ -32,8 +32,8 @@
     "@auto-it/conventional-commits": "^11.3.0",
     "@auto-it/npm": "^11.3.0",
     "auto": "^11.3.0",
-    "expo-module-scripts": "^4.0.2",
-    "expo-modules-core": "^2.1.2",
+    "expo-module-scripts": "^4.0.5",
+    "expo-modules-core": "^2.2.3",
     "prettier": "^3.2.5"
   },
   "peerDependencies": {

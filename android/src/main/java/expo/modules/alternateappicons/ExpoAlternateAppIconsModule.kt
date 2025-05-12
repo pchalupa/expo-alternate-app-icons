@@ -23,9 +23,13 @@ class ExpoAlternateAppIconsModule : Module() {
   }
 
   private fun getAppIconName(): String? {
-    val currentActivityComponent = appContext.activityProvider!!.currentActivity!!.componentName!!
+    val currentActivityComponent = appContext.activityProvider?.currentActivity?.componentName ?: return null
 
-    return retrieveIconNameFromComponent(currentActivityComponent)
+    return try {
+      retrieveIconNameFromComponent(currentActivityComponent)
+    } catch (error: PackageManager.NameNotFoundException) {
+      null
+    }
   }
 
   private suspend fun setAlternateAppIcon(icon: String?): String? = withContext(Dispatchers.Main) {

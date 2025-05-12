@@ -6,7 +6,7 @@ import {
   type AlternateAppIcons,
 } from 'expo-alternate-app-icons';
 import { StatusBar } from 'expo-status-bar';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Text, View, SafeAreaView, Alert } from 'react-native';
 
 import { icons } from './App.preset';
@@ -39,6 +39,10 @@ export default function App() {
       if (error instanceof Error) Alert.alert('Error', error.message);
     }
   }, [setCurrentAppIconName]);
+
+  useEffect(() => {
+    setCurrentAppIconName(getAppIconName());
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>

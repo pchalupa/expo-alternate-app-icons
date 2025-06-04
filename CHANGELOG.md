@@ -1,3 +1,16 @@
+# 1.4.0 (Wed Jun 04 2025)
+
+#### 🚀 Enhancement
+
+- chore(deps): bump the npm_and_yarn group across 2 directories with 2 updates [#169](https://github.com/pchalupa/expo-alternate-app-icons/pull/169) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 1.3.2 (Mon May 12 2025)
 
 #### 🐛 Bug Fix

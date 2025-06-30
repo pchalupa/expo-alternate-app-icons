@@ -1,3 +1,15 @@
+# 1.5.0 (Mon Jun 30 2025)
+
+#### 🚀 Enhancement
+
+- chore(deps-dev): bump prettier from 3.5.3 to 3.6.2 [#173](https://github.com/pchalupa/expo-alternate-app-icons/pull/173) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 1
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+
+---
+
 # 1.4.0 (Wed Jun 04 2025)
 
 #### 🚀 Enhancement

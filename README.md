@@ -134,6 +134,6 @@ function resetAppIcon(): Promise<void>;
 ### Expo Config Plugin
 
 ```shell
-npm run build plugin # Start build on save
-cd example && npx expo prebuild # Execute the config plugin
+yarn run build plugin # Start build on save
+cd example && yarn expo prebuild # Execute the config plugin
 ```

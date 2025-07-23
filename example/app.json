@@ -22,7 +22,8 @@
         "foregroundImage": "./assets/icon-foreground.png",
         "backgroundColor": "#001413"
       },
-      "package": "expo.modules.alternateappicons.example"
+      "package": "expo.modules.alternateappicons.example",
+      "edgeToEdgeEnabled": true
     },
     "web": {
       "favicon": "./assets/favicon.png"

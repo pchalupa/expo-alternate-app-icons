@@ -1,5 +1,5 @@
 {
-  "name": "expo-alternate-app-icons-example",
+  "name": "example",
   "version": "1.0.0",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
@@ -11,18 +11,18 @@
     "prebuild": "expo prebuild"
   },
   "dependencies": {
-    "expo": "~52.0.46",
-    "expo-status-bar": "~2.0.1",
-    "react": "18.3.1",
-    "react-native": "0.76.9",
-    "expo-system-ui": "~4.0.9",
-    "expo-build-properties": "~0.13.2"
+    "expo": "~53.0.19",
+    "expo-build-properties": "~0.14.8",
+    "expo-status-bar": "~2.2.3",
+    "expo-system-ui": "~5.0.10",
+    "react": "19.0.0",
+    "react-native": "0.79.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.4",
+    "@babel/core": "^7.26.0",
+    "@types/react": "~19.0.10",
     "babel-plugin-module-resolver": "^5.0.2",
-    "typescript": "^5.3.0",
-    "@types/react": "~18.3.12"
+    "typescript": "~5.8.3"
   },
   "expo": {
     "autolinking": {

@@ -5854,9 +5854,11 @@ __metadata:
     "@auto-it/npm": "npm:^11.3.0"
     auto: "npm:^11.3.0"
     eslint: "npm:^9.31.0"
+    expo: "npm:>=53"
     expo-module-scripts: "npm:^4.1.9"
     expo-modules-core: "npm:^2.5.0"
     prettier: "npm:^3.6.2"
+    typescript: "npm:~5.8.3"
   peerDependencies:
     expo: ">=53"
     react: "*"
@@ -6020,7 +6022,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo@npm:~53.0.19":
+"expo@npm:>=53, expo@npm:~53.0.19":
   version: 53.0.20
   resolution: "expo@npm:53.0.20"
   dependencies:

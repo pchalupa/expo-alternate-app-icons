@@ -15,6 +15,9 @@
     "expo-alternate-app-icons",
     "ExpoAlternateAppIcons"
   ],
+  "workspaces": [
+    "example"
+  ],
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
@@ -32,12 +35,12 @@
     "@auto-it/conventional-commits": "^11.3.0",
     "@auto-it/npm": "^11.3.0",
     "auto": "^11.3.0",
-    "expo-module-scripts": "^4.0.5",
-    "expo-modules-core": "^2.2.3",
-    "prettier": "^3.2.5"
+    "expo-module-scripts": "^4.1.9",
+    "expo-modules-core": "^2.5.0",
+    "prettier": "^3.6.2"
   },
   "peerDependencies": {
-    "expo": ">=52",
+    "expo": ">=53",
     "react": "*",
     "react-native": "*"
   }

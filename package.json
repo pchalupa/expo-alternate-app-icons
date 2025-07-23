@@ -35,6 +35,7 @@
     "@auto-it/conventional-commits": "^11.3.0",
     "@auto-it/npm": "^11.3.0",
     "auto": "^11.3.0",
+    "eslint": "^9.31.0",
     "expo-module-scripts": "^4.1.9",
     "expo-modules-core": "^2.5.0",
     "prettier": "^3.6.2"

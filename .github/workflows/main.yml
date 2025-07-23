@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 22
           cache: 'yarn'
-      - run: yarn --frozen-lockfile
+      - run: yarn install
       - run: yarn lint
 
   publish:
@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: 22
           cache: 'yarn'
-      - run: yarn --frozen-lockfile
+      - run: yarn install
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

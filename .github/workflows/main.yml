@@ -9,9 +9,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
-      - run: npm ci
+          node-version: 22
+          cache: 'yarn'
+      - run: yarn --frozen-lockfile
       - run: yarn lint
 
   publish:
@@ -33,9 +33,9 @@ jobs:
           ssh-key: ${{ secrets.SSH_KEY }}
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
-      - run: npm ci
+          node-version: 22
+          cache: 'yarn'
+      - run: yarn --frozen-lockfile
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

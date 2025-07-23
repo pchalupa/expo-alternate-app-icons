@@ -43,5 +43,6 @@
     "expo": ">=53",
     "react": "*",
     "react-native": "*"
-  }
+  },
+  "packageManager": "yarn@4.9.2"
 }

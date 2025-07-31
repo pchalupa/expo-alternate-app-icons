@@ -1,4 +1,4 @@
-name: Main
+name: Code Quality
 on:
   - push
 jobs:
@@ -7,11 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: corepack enable
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
-      - run: npm ci
+          node-version: 22
+          cache: 'yarn'
+      - run: yarn install
       - run: yarn lint
 
   publish:
@@ -31,11 +32,12 @@ jobs:
         with:
           fetch-depth: 0
           ssh-key: ${{ secrets.SSH_KEY }}
+      - run: corepack enable
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
-      - run: npm ci
+          node-version: 22
+          cache: 'yarn'
+      - run: yarn install
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

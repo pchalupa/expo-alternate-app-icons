@@ -1,3 +1,15 @@
+# 2.0.0 (Thu Jul 31 2025)
+
+#### 💥 Breaking Change
+
+- chore: update to expo 53 [#180](https://github.com/pchalupa/expo-alternate-app-icons/pull/180) ([@pchalupa](https://github.com/pchalupa))
+
+#### Authors: 1
+
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 1.7.0 (Tue Jul 22 2025)
 
 #### 🚀 Enhancement

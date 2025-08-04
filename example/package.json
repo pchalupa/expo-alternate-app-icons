@@ -16,7 +16,7 @@
     "expo-status-bar": "~2.2.3",
     "expo-system-ui": "~5.0.10",
     "react": "19.0.0",
-    "react-native": "0.79.5"
+    "react-native": "0.80.2"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",

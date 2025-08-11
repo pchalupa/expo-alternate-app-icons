@@ -1,3 +1,19 @@
+# 2.2.0 (Mon Aug 11 2025)
+
+#### 🚀 Enhancement
+
+- chore(deps-dev): bump eslint from 9.32.0 to 9.33.0 [#185](https://github.com/pchalupa/expo-alternate-app-icons/pull/185) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 🐛 Bug Fix
+
+- chore(deps-dev): bump expo-module-scripts from 4.1.9 to 4.1.10 [#186](https://github.com/pchalupa/expo-alternate-app-icons/pull/186) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 1
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+
+---
+
 # 2.1.0 (Mon Aug 04 2025)
 
 #### 🚀 Enhancement

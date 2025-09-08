@@ -47,5 +47,8 @@
     "react": "*",
     "react-native": "*"
   },
+  "publishConfig": {
+    "provenance": true
+  },
   "packageManager": "yarn@4.9.2"
 }

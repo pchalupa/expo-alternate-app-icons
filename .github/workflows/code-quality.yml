@@ -24,6 +24,7 @@ jobs:
       pull-requests: write
       contents: read
       deployments: write
+      id-token: write
     environment:
       name: npm
       url: https://www.npmjs.com/package/expo-alternate-app-icons

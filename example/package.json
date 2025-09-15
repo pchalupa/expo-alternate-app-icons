@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "expo": "~53.0.19",
-    "expo-build-properties": "~0.14.8",
+    "expo-build-properties": "~1.0.8",
     "expo-status-bar": "~2.2.3",
     "expo-system-ui": "~5.0.10",
     "react": "19.0.0",

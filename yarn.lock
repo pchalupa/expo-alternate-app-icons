@@ -6059,7 +6059,7 @@ __metadata:
     "@types/react": "npm:~19.0.10"
     babel-plugin-module-resolver: "npm:^5.0.2"
     expo: "npm:~53.0.19"
-    expo-build-properties: "npm:~0.14.8"
+    expo-build-properties: "npm:~1.0.9"
     expo-status-bar: "npm:~2.2.3"
     expo-system-ui: "npm:~5.0.10"
     react: "npm:19.0.0"
@@ -6139,15 +6139,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-build-properties@npm:~0.14.8":
-  version: 0.14.8
-  resolution: "expo-build-properties@npm:0.14.8"
+"expo-build-properties@npm:~1.0.9":
+  version: 1.0.9
+  resolution: "expo-build-properties@npm:1.0.9"
   dependencies:
     ajv: "npm:^8.11.0"
     semver: "npm:^7.6.0"
   peerDependencies:
     expo: "*"
-  checksum: 10c0/7c41bd282f0a35ce73da82d5a4bfcfe88ce3a1bf34737bcd06c9f2d4f7100bbf31653ff0171d92c18a13f5322f831b224f9e47bf5b05df8f15d9514d53d0c51b
+  checksum: 10c0/5addb03be44b702d5321bfd5550b663cd36d1b6cb6d50d87bd11c41d6d702ccbdba76b4361590f511236bc9ff740f616d387e05bdafe6a6acc096e03773d00e0
   languageName: node
   linkType: hard
 

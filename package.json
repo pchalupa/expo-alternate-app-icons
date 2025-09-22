@@ -38,7 +38,7 @@
     "eslint": "^9.31.0",
     "expo": "~53.0.0",
     "expo-module-scripts": "^4.1.9",
-    "expo-modules-core": "^2.5.0",
+    "expo-modules-core": "^3.0.17",
     "prettier": "^3.6.2",
     "typescript": "~5.8.3"
   },

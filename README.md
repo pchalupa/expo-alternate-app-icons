@@ -36,48 +36,50 @@ This package contains an Expo Plugin that copies your alternative icons to nativ
 2. The second item in the array accepts an array with details about your alternate icons.
 3. [Prebuild](https://docs.expo.dev/workflow/prebuild/) a project using `npx expo prebuild --clean` to apply the plugin changes.
 
-```json
+```json5
 // app.json
 {
   // ...
-  "plugins": [
+  plugins: [
     // ...
     [
-      "expo-alternate-app-icons",
+      'expo-alternate-app-icons',
       [
         {
-          "name": "IconA", // The name of the alternate icon
-          "ios": {
-            "light":"./assets/icon-a.png",
-            "dark":"./assets/icon-a-dark.png",
-            "tinted":"./assets/icon-a-tinted.png"
+          name: 'IconA', // The name of the alternate icon, follow PascalCase convention
+          ios: {
+            light: './assets/icon-a.png',
+            dark: './assets/icon-a-dark.png',
+            tinted: './assets/icon-a-tinted.png',
           }, // Path to the iOS app icons or if you do not want to use the variants enter directly the path
-          "android": {
-            "foregroundImage": "./assets/icon-a-foreground.png", // Path to Android foreground image
-            "backgroundColor": "#001413" // Background color for Android adaptive icon
-          }
+          android: {
+            foregroundImage: './assets/icon-a-foreground.png', // Path to Android foreground image
+            backgroundColor: '#001413', // Background color for Android adaptive icon
+          },
         },
         {
-          "name": "IconB",
-          "ios": "./assets/icon-b.png",  // Without variants,
-          "android": {
-            "foregroundImage": "./assets/icon-b-foreground.png",
-            "backgroundColor": "#001413"
-          }
+          name: 'IconB',
+          ios: './assets/icon-b.png', // Without variants,
+          android: {
+            foregroundImage: './assets/icon-b-foreground.png',
+            backgroundColor: '#001413',
+          },
         },
         {
-          "name": "IconC",
-          "ios": "./assets/icon-c.png",
-          "android": {
-            "foregroundImage": "./assets/icon-c-foreground.png",
-            "backgroundColor": "#001413"
-          }
-        }
-      ]
-    ]
-  ]
+          name: 'IconC',
+          ios: './assets/icon-c.png',
+          android: {
+            foregroundImage: './assets/icon-c-foreground.png',
+            backgroundColor: '#001413',
+          },
+        },
+      ],
+    ],
+  ],
 }
 ```
+
+> **Note:** Icon names are automatically converted to PascalCase. For example, `"icon-a"` becomes `"IconA"`.
 
 ### Icons
 

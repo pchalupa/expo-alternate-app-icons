@@ -35,5 +35,5 @@ export function toPascalCaseIconName(icon: AlternateIcon): AlternateIcon {
 export function isPathArray(
   alternateIcons: AlternateIcon[] | string[],
 ): alternateIcons is string[] {
-  return alternateIcons.some((icon) => typeof icon === 'string');
+  return alternateIcons.every((icon) => typeof icon === 'string');
 }

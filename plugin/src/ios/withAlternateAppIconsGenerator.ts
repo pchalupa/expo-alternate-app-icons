@@ -2,7 +2,7 @@ import { type ExpoConfig } from '@expo/config-types';
 import { withDangerousMod } from 'expo/config-plugins';
 
 import { generateUniversalIcon, generateUniversalVariantsIcon } from './generateUniversalIcon';
-import { AlternateIcon, isIosVariantsIcon } from './types';
+import { AlternateIcon, isIosVariantsIcon } from '../types';
 
 export function withAlternateAppIconsGenerator(
   config: ExpoConfig,

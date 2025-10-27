@@ -2,7 +2,7 @@ import { IOSConfig } from 'expo/config-plugins';
 import { writeFile, mkdir } from 'fs/promises';
 import { join, parse } from 'path';
 
-import { iOSVariants, iOSVariantsIcon } from './types';
+import { iOSVariants, iOSVariantsIcon } from '../types';
 import { writeContentsJson, writeVariantsContentsJson } from './writeContentsJson';
 import { jimpAsync } from '@expo/image-utils/build/jimp';
 

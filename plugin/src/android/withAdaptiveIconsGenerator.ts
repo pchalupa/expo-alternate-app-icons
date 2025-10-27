@@ -5,9 +5,9 @@ import {
   withDangerousMod,
 } from '@expo/config-plugins';
 import { ExpoConfig } from '@expo/config-types';
-import { AlternateIcon } from './types';
+import { AlternateIcon } from '../types';
 import { generateAdaptiveIcon } from './generateAdaptiveIcon';
-import { toPascalCase } from './StringUtils';
+import { toPascalCase } from '../StringUtils';
 
 const { Colors } = AndroidConfig;
 

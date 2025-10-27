@@ -3,10 +3,10 @@ import { type ExpoConfig } from '@expo/config-types';
 import { generateTypeIconsFile } from './generateTypeIconsFIle';
 import { type AlternateIcon } from './types';
 import { isPathArray, toAlternateIcon, toPascalCaseIconName } from './utils';
-import { withAdaptiveIconsGenerator } from './withAdaptiveIconsGenerator';
-import { withAlternateAppIconsGenerator } from './withAlternateAppIconsGenerator';
-import { withAndroidManifestUpdate } from './withAndroidManifestUpdate';
-import { withXcodeProjectUpdate } from './withXcodeProjectUpdate';
+import { withAdaptiveIconsGenerator } from './android/withAdaptiveIconsGenerator';
+import { withAlternateAppIconsGenerator } from './ios/withAlternateAppIconsGenerator';
+import { withAndroidManifestUpdate } from './android/withAndroidManifestUpdate';
+import { withXcodeProjectUpdate } from './ios/withXcodeProjectUpdate';
 
 export default function withAlternateAppIcons(
   config: ExpoConfig,

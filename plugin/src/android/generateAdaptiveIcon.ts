@@ -1,7 +1,7 @@
-import { AlternateIcon } from './types';
+import { AlternateIcon } from '../types';
 import { compositeImagesAsync, generateImageAsync } from '@expo/image-utils';
 import path from 'path';
-import { toPascalCase, toSnakeCase } from './StringUtils';
+import { toPascalCase, toSnakeCase } from '../StringUtils';
 import { writeFile, mkdir, rm } from 'fs/promises';
 
 type DPIString = 'mdpi' | 'hdpi' | 'xhdpi' | 'xxhdpi' | 'xxxhdpi';

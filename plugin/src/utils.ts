@@ -2,7 +2,7 @@ import { WarningAggregator } from 'expo/config-plugins';
 import fs from 'fs';
 import { parse, resolve, dirname } from 'path';
 
-import { type AlternateIcon } from '../types';
+import { type AlternateIcon } from './types';
 
 /** Converts a file path to an AlternateIcon object with the file name as the icon name. */
 export function toAlternateIcon(path: string): AlternateIcon {

@@ -19,6 +19,7 @@ export default function withAlternateAppIcons(
   else alternateIcons = props.map(toPascalCaseIconName);
 
   const iconNames = alternateIcons.map((icon) => icon.name);
+
   generateTypeIconsFile(iconNames);
 
   config = withAlternateAppIconsGenerator(config, alternateIcons);

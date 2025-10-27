@@ -1,8 +1,7 @@
 import { type ExpoConfig } from '@expo/config-types';
 
-import { generateTypeIconsFile } from './generateTypeIconsFIle';
 import { type AlternateIcon } from './types';
-import { isPathArray, toAlternateIcon, toPascalCaseIconName } from './utils';
+import { generateTypeIconsFile, isPathArray, toAlternateIcon, toPascalCaseIconName } from './utils';
 import { withAdaptiveIconsGenerator } from './android/withAdaptiveIconsGenerator';
 import { withAlternateAppIconsGenerator } from './ios/withAlternateAppIconsGenerator';
 import { withAndroidManifestUpdate } from './android/withAndroidManifestUpdate';

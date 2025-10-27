@@ -7,7 +7,7 @@ import {
 import { ExpoConfig } from '@expo/config-types';
 import { AlternateIcon } from '../types';
 import { generateAdaptiveIcon } from './generateAdaptiveIcon';
-import { toPascalCase } from '../StringUtils';
+import { toPascalCase } from '../utils';
 
 const { Colors } = AndroidConfig;
 

@@ -2,7 +2,7 @@ import { WarningAggregator } from 'expo/config-plugins';
 import fs from 'fs';
 import { parse, resolve, dirname } from 'path';
 
-import { type AlternateIcon } from './types';
+import { iOSVariantsIcon, type AlternateIcon } from './types';
 
 /** Converts a file path to an AlternateIcon object with the file name as the icon name. */
 export function toAlternateIcon(path: string): AlternateIcon {
@@ -55,6 +55,16 @@ export function isPathArray(
 ): alternateIcons is string[] {
   return alternateIcons.every((icon) => typeof icon === 'string');
 }
+
+export const isIosVariantsIcon = (iconPath: unknown): iconPath is iOSVariantsIcon =>
+  typeof iconPath === 'object' &&
+  iconPath != null &&
+  'dark' in iconPath &&
+  'light' in iconPath &&
+  'tinted' in iconPath &&
+  typeof iconPath.dark === 'string' &&
+  typeof iconPath.light === 'string' &&
+  typeof iconPath.tinted === 'string';
 
 /** Converts text to PascalCase by capitalizing each word and removing separators. */
 export function toPascalCase(text: string): string {

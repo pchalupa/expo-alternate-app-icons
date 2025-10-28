@@ -10,13 +10,3 @@ export type AlternateIcon = {
   ios: iOSConfig['icon'] | iOSVariantsIcon;
   android: AndroidConfig['adaptiveIcon'];
 };
-
-export const isIosVariantsIcon = (iconPath: unknown): iconPath is iOSVariantsIcon =>
-  typeof iconPath === 'object' &&
-  iconPath != null &&
-  'dark' in iconPath &&
-  'light' in iconPath &&
-  'tinted' in iconPath &&
-  typeof iconPath.dark === 'string' &&
-  typeof iconPath.light === 'string' &&
-  typeof iconPath.tinted === 'string';

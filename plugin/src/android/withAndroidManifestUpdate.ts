@@ -1,6 +1,7 @@
 import { AndroidConfig, withAndroidManifest } from '@expo/config-plugins';
-import { ExpoConfig, Android } from '@expo/config-types';
-import { toPascalCase, toSnakeCase } from './StringUtils';
+import { type ExpoConfig, type Android } from '@expo/config-types';
+
+import { toPascalCase, toSnakeCase } from '../utils';
 
 type AndroidIntentFilters = NonNullable<Android['intentFilters']>;
 

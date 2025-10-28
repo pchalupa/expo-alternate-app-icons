@@ -1,12 +1,11 @@
 import { type ExpoConfig } from '@expo/config-types';
 
-import { generateTypeIconsFile } from './generateTypeIconsFIle';
+import { withAdaptiveIconsGenerator } from './android/withAdaptiveIconsGenerator';
+import { withAndroidManifestUpdate } from './android/withAndroidManifestUpdate';
+import { withAlternateAppIconsGenerator } from './ios/withAlternateAppIconsGenerator';
+import { withXcodeProjectUpdate } from './ios/withXcodeProjectUpdate';
 import { type AlternateIcon } from './types';
-import { isPathArray, toAlternateIcon, toPascalCaseIconName } from './utils';
-import { withAdaptiveIconsGenerator } from './withAdaptiveIconsGenerator';
-import { withAlternateAppIconsGenerator } from './withAlternateAppIconsGenerator';
-import { withAndroidManifestUpdate } from './withAndroidManifestUpdate';
-import { withXcodeProjectUpdate } from './withXcodeProjectUpdate';
+import { generateTypeIconsFile, isPathArray, toAlternateIcon, toPascalCaseIconName } from './utils';
 
 export default function withAlternateAppIcons(
   config: ExpoConfig,
@@ -20,6 +19,7 @@ export default function withAlternateAppIcons(
   else alternateIcons = props.map(toPascalCaseIconName);
 
   const iconNames = alternateIcons.map((icon) => icon.name);
+
   generateTypeIconsFile(iconNames);
 
   config = withAlternateAppIconsGenerator(config, alternateIcons);

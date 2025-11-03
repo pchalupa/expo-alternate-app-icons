@@ -3338,12 +3338,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:~19.0.10":
-  version: 19.0.14
-  resolution: "@types/react@npm:19.0.14"
+"@types/react@npm:~19.2.2":
+  version: 19.2.2
+  resolution: "@types/react@npm:19.2.2"
   dependencies:
     csstype: "npm:^3.0.2"
-  checksum: 10c0/e5d9ac42fc6d66c21b7020c8ae1a8190c486e63e5daf2f67b67694dd39c6264cc92a57f90b84525bf73774b90f91bd3b1d907022bcc9b36d6d4ffbcf001f8feb
+  checksum: 10c0/f830b1204aca4634ce3c6cb3477b5d3d066b80a4dd832a4ee0069acb504b6debd2416548a43a11c1407c12bc60e2dc6cf362934a18fe75fe06a69c0a98cba8ab
   languageName: node
   linkType: hard
 
@@ -6057,13 +6057,13 @@ __metadata:
   resolution: "example@workspace:example"
   dependencies:
     "@babel/core": "npm:^7.26.0"
-    "@types/react": "npm:~19.0.10"
+    "@types/react": "npm:~19.2.2"
     babel-plugin-module-resolver: "npm:^5.0.2"
     expo: "npm:~53.0.19"
     expo-build-properties: "npm:~0.14.8"
     expo-status-bar: "npm:~2.2.3"
     expo-system-ui: "npm:~5.0.10"
-    react: "npm:19.0.0"
+    react: "npm:19.2.0"
     react-native: "npm:0.79.5"
     typescript: "npm:~5.9.3"
   languageName: unknown
@@ -10261,10 +10261,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:19.0.0":
-  version: 19.0.0
-  resolution: "react@npm:19.0.0"
-  checksum: 10c0/9cad8f103e8e3a16d15cb18a0d8115d8bd9f9e1ce3420310aea381eb42aa0a4f812cf047bb5441349257a05fba8a291515691e3cb51267279b2d2c3253f38471
+"react@npm:19.2.0":
+  version: 19.2.0
+  resolution: "react@npm:19.2.0"
+  checksum: 10c0/1b6d64eacb9324725bfe1e7860cb7a6b8a34bc89a482920765ebff5c10578eb487e6b46b2f0df263bd27a25edbdae2c45e5ea5d81ae61404301c1a7192c38330
   languageName: node
   linkType: hard
 

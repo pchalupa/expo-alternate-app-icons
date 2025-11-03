@@ -6116,7 +6116,7 @@ __metadata:
     eslint: "npm:^9.31.0"
     expo: "npm:~53.0.0"
     expo-module-scripts: "npm:^4.1.9"
-    expo-modules-core: "npm:^2.5.0"
+    expo-modules-core: "npm:^3.0.23"
     prettier: "npm:^3.6.2"
     typescript: "npm:~5.9.3"
   peerDependencies:
@@ -6243,12 +6243,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-modules-core@npm:2.5.0, expo-modules-core@npm:^2.5.0":
+"expo-modules-core@npm:2.5.0":
   version: 2.5.0
   resolution: "expo-modules-core@npm:2.5.0"
   dependencies:
     invariant: "npm:^2.2.4"
   checksum: 10c0/9586d80644278fa4c15cc1e85f403934a07936574c050623b26a0dec8d8cbc8776ed68e988510621495d1227f52a127938a2aad2c997d05a449d0f1fd009da86
+  languageName: node
+  linkType: hard
+
+"expo-modules-core@npm:^3.0.23":
+  version: 3.0.23
+  resolution: "expo-modules-core@npm:3.0.23"
+  dependencies:
+    invariant: "npm:^2.2.4"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 10c0/79a801d2d8f3ae7e5e9887f337eea29ba6d2c3198c3854660b1ec33f837a043897dfcfb6b3722509cecbbca27b6cdfe32d85f03d916eb59e23104ae2b2a23dd0
   languageName: node
   linkType: hard
 

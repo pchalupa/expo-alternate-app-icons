@@ -18,3 +18,7 @@ updates:
       - 'dependencies'
     assignees:
       - 'pchalupa'
+    ignore:
+      - dependency-name: 'expo*'
+      - dependency-name: 'react'
+      - dependency-name: 'react-native'

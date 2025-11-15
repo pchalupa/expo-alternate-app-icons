@@ -1,3 +1,40 @@
+# 3.0.0 (Sat Nov 15 2025)
+
+#### 💥 Breaking Change
+
+- chore(deps): bump actions/setup-node from 5 to 6 [#219](https://github.com/pchalupa/expo-alternate-app-icons/pull/219) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump actions/setup-node from 4 to 5 [#195](https://github.com/pchalupa/expo-alternate-app-icons/pull/195) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump actions/checkout from 4 to 5 [#190](https://github.com/pchalupa/expo-alternate-app-icons/pull/190) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 🚀 Enhancement
+
+- chore(deps-dev): bump eslint from 9.38.0 to 9.39.0 [#232](https://github.com/pchalupa/expo-alternate-app-icons/pull/232) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump typescript from 5.8.3 to 5.9.3 [#223](https://github.com/pchalupa/expo-alternate-app-icons/pull/223) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump eslint from 9.35.0 to 9.38.0 [#225](https://github.com/pchalupa/expo-alternate-app-icons/pull/225) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- fix: icon name casing [#220](https://github.com/pchalupa/expo-alternate-app-icons/pull/220) ([@pchalupa](https://github.com/pchalupa))
+- chore(deps-dev): bump eslint from 9.34.0 to 9.35.0 [#198](https://github.com/pchalupa/expo-alternate-app-icons/pull/198) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump eslint from 9.33.0 to 9.34.0 [#193](https://github.com/pchalupa/expo-alternate-app-icons/pull/193) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 🐛 Bug Fix
+
+- chore(deps): bump js-yaml from 3.14.1 to 3.14.2 in the npm_and_yarn group across 1 directory [#236](https://github.com/pchalupa/expo-alternate-app-icons/pull/236) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump eslint from 9.39.0 to 9.39.1 [#235](https://github.com/pchalupa/expo-alternate-app-icons/pull/235) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump @babel/core from 7.28.4 to 7.28.5 [#234](https://github.com/pchalupa/expo-alternate-app-icons/pull/234) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(dependabot): ignore react native dependencies [#233](https://github.com/pchalupa/expo-alternate-app-icons/pull/233) ([@pchalupa](https://github.com/pchalupa))
+- chore: reorganize plugin files [#227](https://github.com/pchalupa/expo-alternate-app-icons/pull/227) ([@pchalupa](https://github.com/pchalupa))
+- docs: add contributing guidelines [#221](https://github.com/pchalupa/expo-alternate-app-icons/pull/221) ([@pchalupa](https://github.com/pchalupa))
+- chore: add provenance [#191](https://github.com/pchalupa/expo-alternate-app-icons/pull/191) ([@pchalupa](https://github.com/pchalupa))
+- chore(deps-dev): bump @babel/core from 7.28.3 to 7.28.4 [#197](https://github.com/pchalupa/expo-alternate-app-icons/pull/197) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump expo from 53.0.20 to 53.0.22 [#196](https://github.com/pchalupa/expo-alternate-app-icons/pull/196) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump @babel/core from 7.28.0 to 7.28.3 [#188](https://github.com/pchalupa/expo-alternate-app-icons/pull/188) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 3.0.0 (Sun Oct 26 2025)
 
 #### 💥 Breaking Change

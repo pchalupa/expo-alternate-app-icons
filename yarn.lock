@@ -24,6 +24,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@auto-it/bot-list@npm:11.3.6":
+  version: 11.3.6
+  resolution: "@auto-it/bot-list@npm:11.3.6"
+  checksum: 10c0/0a2d591426af4029a8432f77ae94093e8dc42a087d7e300954248698da59b59fbc2fad8041384af759b82aa5c334d617c34f0a036960f3cd59b9cb3380a1539d
+  languageName: node
+  linkType: hard
+
 "@auto-it/conventional-commits@npm:^11.3.0":
   version: 11.3.0
   resolution: "@auto-it/conventional-commits@npm:11.3.0"
@@ -94,7 +101,82 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@auto-it/npm@npm:11.3.0, @auto-it/npm@npm:^11.3.0":
+"@auto-it/core@npm:11.3.6":
+  version: 11.3.6
+  resolution: "@auto-it/core@npm:11.3.6"
+  dependencies:
+    "@auto-it/bot-list": "npm:11.3.6"
+    "@endemolshinegroup/cosmiconfig-typescript-loader": "npm:^3.0.2"
+    "@octokit/core": "npm:^3.5.1"
+    "@octokit/plugin-enterprise-compatibility": "npm:1.3.0"
+    "@octokit/plugin-retry": "npm:^3.0.9"
+    "@octokit/plugin-throttling": "npm:^3.6.2"
+    "@octokit/rest": "npm:^18.12.0"
+    await-to-js: "npm:^3.0.0"
+    chalk: "npm:^4.0.0"
+    cosmiconfig: "npm:7.0.0"
+    deepmerge: "npm:^4.0.0"
+    dotenv: "npm:^8.0.0"
+    endent: "npm:^2.1.0"
+    enquirer: "npm:^2.3.4"
+    env-ci: "npm:^5.0.1"
+    fast-glob: "npm:^3.1.1"
+    fp-ts: "npm:^2.5.3"
+    fromentries: "npm:^1.2.0"
+    gitlog: "npm:^4.0.3"
+    https-proxy-agent: "npm:^5.0.0"
+    import-cwd: "npm:^3.0.0"
+    import-from: "npm:^3.0.0"
+    io-ts: "npm:^2.1.2"
+    lodash.chunk: "npm:^4.2.0"
+    log-symbols: "npm:^4.0.0"
+    node-fetch: "npm:2.6.7"
+    parse-author: "npm:^2.0.0"
+    parse-github-url: "npm:1.0.2"
+    pretty-ms: "npm:^7.0.0"
+    requireg: "npm:^0.2.2"
+    semver: "npm:^7.0.0"
+    signale: "npm:^1.4.0"
+    tapable: "npm:^2.2.0"
+    terminal-link: "npm:^2.1.1"
+    tinycolor2: "npm:^1.4.1"
+    ts-node: "npm:^10.9.1"
+    tslib: "npm:2.1.0"
+    type-fest: "npm:^0.21.1"
+    typescript-memoize: "npm:^1.0.0-alpha.3"
+    url-join: "npm:^4.0.0"
+  peerDependencies:
+    typescript: ">=2.7"
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+  checksum: 10c0/13fa165a638f20462e1cda8c3aaed5ed917241a4cf2fbc40be61ab43a94d572e4801190e3b558630b0836bdcce87210a60c3205737984615f4ee02dcef5d6edc
+  languageName: node
+  linkType: hard
+
+"@auto-it/npm@npm:11.3.6":
+  version: 11.3.6
+  resolution: "@auto-it/npm@npm:11.3.6"
+  dependencies:
+    "@auto-it/core": "npm:11.3.6"
+    "@auto-it/package-json-utils": "npm:11.3.6"
+    await-to-js: "npm:^3.0.0"
+    endent: "npm:^2.1.0"
+    env-ci: "npm:^5.0.1"
+    fp-ts: "npm:^2.5.3"
+    get-monorepo-packages: "npm:^1.3.0"
+    io-ts: "npm:^2.1.2"
+    registry-url: "npm:^5.1.0"
+    semver: "npm:^7.0.0"
+    tslib: "npm:2.1.0"
+    typescript-memoize: "npm:^1.0.0-alpha.3"
+    url-join: "npm:^4.0.0"
+    user-home: "npm:^2.0.0"
+  checksum: 10c0/58d81941824aaaae4d6f6fe2f43cc06339f45840614731b50503df8eac346cd601bbbaad4b825b4bdb588fd62cd5d09717e1946e4c33f4fb2b2fb22c9f4562ca
+  languageName: node
+  linkType: hard
+
+"@auto-it/npm@npm:^11.3.0":
   version: 11.3.0
   resolution: "@auto-it/npm@npm:11.3.0"
   dependencies:
@@ -126,30 +208,40 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@auto-it/released@npm:11.3.0":
-  version: 11.3.0
-  resolution: "@auto-it/released@npm:11.3.0"
+"@auto-it/package-json-utils@npm:11.3.6":
+  version: 11.3.6
+  resolution: "@auto-it/package-json-utils@npm:11.3.6"
   dependencies:
-    "@auto-it/bot-list": "npm:11.3.0"
-    "@auto-it/core": "npm:11.3.0"
+    parse-author: "npm:^2.0.0"
+    parse-github-url: "npm:1.0.2"
+  checksum: 10c0/b99fb593f9e3aa9e20d2691db494e7dc3fe344715fa3e50153a84fbc3cc041eb60c0e68ae215f543684021702a7b590d14cb23d8688af5f13d5487bceecbe0b5
+  languageName: node
+  linkType: hard
+
+"@auto-it/released@npm:11.3.6":
+  version: 11.3.6
+  resolution: "@auto-it/released@npm:11.3.6"
+  dependencies:
+    "@auto-it/bot-list": "npm:11.3.6"
+    "@auto-it/core": "npm:11.3.6"
     deepmerge: "npm:^4.0.0"
     fp-ts: "npm:^2.5.3"
     io-ts: "npm:^2.1.2"
     tslib: "npm:2.1.0"
-  checksum: 10c0/26a44d071b86014dc70b03b60b015835c8b2ca798981eff1027a20bf76ee1abc5fa29b46f0a33c0537d2d4f63c76aa3f7f35a6ee148cc91ddb327d577452f6ef
+  checksum: 10c0/21c063ff1c12f4e252106dc94a70ee7023af70cbe27ac0416b40f62c9da29ec28b826842cd476d5df079b18dae5dea7eff3121678798bbba28111028fd940592
   languageName: node
   linkType: hard
 
-"@auto-it/version-file@npm:11.3.0":
-  version: 11.3.0
-  resolution: "@auto-it/version-file@npm:11.3.0"
+"@auto-it/version-file@npm:11.3.6":
+  version: 11.3.6
+  resolution: "@auto-it/version-file@npm:11.3.6"
   dependencies:
-    "@auto-it/core": "npm:11.3.0"
+    "@auto-it/core": "npm:11.3.6"
     fp-ts: "npm:^2.5.3"
     io-ts: "npm:^2.1.2"
     semver: "npm:^7.0.0"
     tslib: "npm:1.10.0"
-  checksum: 10c0/c62f52a89ed003dd8c00c54788750a6b5dbc047fc54ce50753c64a6261b548ad8b8d9ed23b5f92663c4c012b99651e6910438c0d8654374c7bee1a2593017c9b
+  checksum: 10c0/8b1dbb2dfb0d61220247cc56e0b3c911cac95379044041e60adce37a025ca27e4dc171a22d0c930b35a37c27c44e046f27c6a1953ad72ea3bc87ca5f0d343a2d
   languageName: node
   linkType: hard
 
@@ -4021,13 +4113,13 @@ __metadata:
   linkType: hard
 
 "auto@npm:^11.3.0":
-  version: 11.3.0
-  resolution: "auto@npm:11.3.0"
+  version: 11.3.6
+  resolution: "auto@npm:11.3.6"
   dependencies:
-    "@auto-it/core": "npm:11.3.0"
-    "@auto-it/npm": "npm:11.3.0"
-    "@auto-it/released": "npm:11.3.0"
-    "@auto-it/version-file": "npm:11.3.0"
+    "@auto-it/core": "npm:11.3.6"
+    "@auto-it/npm": "npm:11.3.6"
+    "@auto-it/released": "npm:11.3.6"
+    "@auto-it/version-file": "npm:11.3.6"
     await-to-js: "npm:^3.0.0"
     chalk: "npm:^4.0.0"
     command-line-application: "npm:^0.10.1"
@@ -4038,7 +4130,7 @@ __metadata:
     tslib: "npm:2.1.0"
   bin:
     auto: dist/bin/auto.js
-  checksum: 10c0/01389c0a7721848caddc89faadd895a2a19319eacb156a62bae1bc01601eacfb504b3d8d06e81de1d5ac1febc6c8055d73ec031b4137fcaf026143ac68dda3c9
+  checksum: 10c0/8bdca9d52fa8a1d136b3df08b09e95d87b47cd7a2cd2b6bf812813aa5889fd1607676a08c13c59f9cee599ee6f544ac89c108fd0c087b09dc8923669f334d2ae
   languageName: node
   linkType: hard
 
@@ -6737,7 +6829,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"get-monorepo-packages@npm:^1.1.0":
+"get-monorepo-packages@npm:^1.1.0, get-monorepo-packages@npm:^1.3.0":
   version: 1.3.0
   resolution: "get-monorepo-packages@npm:1.3.0"
   dependencies:

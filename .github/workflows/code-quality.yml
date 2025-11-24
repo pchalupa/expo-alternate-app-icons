@@ -6,7 +6,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - run: corepack enable
       - uses: actions/setup-node@v6
         with:
@@ -29,7 +29,7 @@ jobs:
       name: npm
       url: https://www.npmjs.com/package/expo-alternate-app-icons
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
           ssh-key: ${{ secrets.SSH_KEY }}

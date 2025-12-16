@@ -9266,9 +9266,9 @@ __metadata:
   linkType: hard
 
 "node-forge@npm:^1.2.1, node-forge@npm:^1.3.1":
-  version: 1.3.1
-  resolution: "node-forge@npm:1.3.1"
-  checksum: 10c0/e882819b251a4321f9fc1d67c85d1501d3004b4ee889af822fd07f64de3d1a8e272ff00b689570af0465d65d6bf5074df9c76e900e0aff23e60b847f2a46fbe8
+  version: 1.3.3
+  resolution: "node-forge@npm:1.3.3"
+  checksum: 10c0/9c6f53b0ebb34865872cf62a35b0aef8fb337e2efc766626c2e3a0040f4c02933bf29a62ba999eb44a2aca73bd512c4eda22705a47b94654b9fb8ed53db9a1db
   languageName: node
   linkType: hard
 
@@ -10258,17 +10258,17 @@ __metadata:
   linkType: hard
 
 "react-server-dom-webpack@npm:~19.0.0":
-  version: 19.0.0
-  resolution: "react-server-dom-webpack@npm:19.0.0"
+  version: 19.0.3
+  resolution: "react-server-dom-webpack@npm:19.0.3"
   dependencies:
     acorn-loose: "npm:^8.3.0"
     neo-async: "npm:^2.6.1"
     webpack-sources: "npm:^3.2.0"
   peerDependencies:
-    react: ^19.0.0
-    react-dom: ^19.0.0
+    react: ^19.0.3
+    react-dom: ^19.0.3
     webpack: ^5.59.0
-  checksum: 10c0/08f15b5c21f4ec46ebf7578c1c6e8e080270274e81e969dea958d33938970d56dedbc7d598a9588bbc76ad37c1c7c0f61f8caff8ac8fb6725c94de0a9dc488fd
+  checksum: 10c0/01b156fca27eec52b71b71c278ce942d24b2267d8ebf8db638defbdfea431a41b3d557b90c4c168889dea1a71f159c47ed19872c915debff2749a5de4c576c0b
   languageName: node
   linkType: hard
 

@@ -17,13 +17,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@auto-it/bot-list@npm:11.3.0":
-  version: 11.3.0
-  resolution: "@auto-it/bot-list@npm:11.3.0"
-  checksum: 10c0/17facb15164a094bdbae7e9635a661068fd8d15ce8aae3d0c4995cff58cb0799d990d6a851937f6c9475f6d94f84a8139c108422237de8f4bca006e48e724593
-  languageName: node
-  linkType: hard
-
 "@auto-it/bot-list@npm:11.3.6":
   version: 11.3.6
   resolution: "@auto-it/bot-list@npm:11.3.6"
@@ -45,59 +38,6 @@ __metadata:
     io-ts: "npm:^2.1.2"
     tslib: "npm:2.1.0"
   checksum: 10c0/8250dcc5779e07ac3e1e578dbdedaf13020ee81d075645a39cf19dcdd410849401d12df54f15347315e77ebb7330a1eb8685ea4a35047fb0e79b66ab5eca6199
-  languageName: node
-  linkType: hard
-
-"@auto-it/core@npm:11.3.0":
-  version: 11.3.0
-  resolution: "@auto-it/core@npm:11.3.0"
-  dependencies:
-    "@auto-it/bot-list": "npm:11.3.0"
-    "@endemolshinegroup/cosmiconfig-typescript-loader": "npm:^3.0.2"
-    "@octokit/core": "npm:^3.5.1"
-    "@octokit/plugin-enterprise-compatibility": "npm:1.3.0"
-    "@octokit/plugin-retry": "npm:^3.0.9"
-    "@octokit/plugin-throttling": "npm:^3.6.2"
-    "@octokit/rest": "npm:^18.12.0"
-    await-to-js: "npm:^3.0.0"
-    chalk: "npm:^4.0.0"
-    cosmiconfig: "npm:7.0.0"
-    deepmerge: "npm:^4.0.0"
-    dotenv: "npm:^8.0.0"
-    endent: "npm:^2.1.0"
-    enquirer: "npm:^2.3.4"
-    env-ci: "npm:^5.0.1"
-    fast-glob: "npm:^3.1.1"
-    fp-ts: "npm:^2.5.3"
-    fromentries: "npm:^1.2.0"
-    gitlog: "npm:^4.0.3"
-    https-proxy-agent: "npm:^5.0.0"
-    import-cwd: "npm:^3.0.0"
-    import-from: "npm:^3.0.0"
-    io-ts: "npm:^2.1.2"
-    lodash.chunk: "npm:^4.2.0"
-    log-symbols: "npm:^4.0.0"
-    node-fetch: "npm:2.6.7"
-    parse-author: "npm:^2.0.0"
-    parse-github-url: "npm:1.0.2"
-    pretty-ms: "npm:^7.0.0"
-    requireg: "npm:^0.2.2"
-    semver: "npm:^7.0.0"
-    signale: "npm:^1.4.0"
-    tapable: "npm:^2.2.0"
-    terminal-link: "npm:^2.1.1"
-    tinycolor2: "npm:^1.4.1"
-    ts-node: "npm:^10.9.1"
-    tslib: "npm:2.1.0"
-    type-fest: "npm:^0.21.1"
-    typescript-memoize: "npm:^1.0.0-alpha.3"
-    url-join: "npm:^4.0.0"
-  peerDependencies:
-    typescript: ">=2.7"
-  peerDependenciesMeta:
-    "@types/node":
-      optional: true
-  checksum: 10c0/c93ce7772f213ef893682a9c51d6938c087e65054d3dbdf1c7fe6ce55aeb5cc19db619e3fa7002e52e8c2212cea6c9fc20272920a54a97e1b96590dc0cfbb3bc
   languageName: node
   linkType: hard
 

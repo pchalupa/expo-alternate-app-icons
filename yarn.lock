@@ -32,10 +32,10 @@ __metadata:
   linkType: hard
 
 "@auto-it/conventional-commits@npm:^11.3.0":
-  version: 11.3.0
-  resolution: "@auto-it/conventional-commits@npm:11.3.0"
+  version: 11.3.6
+  resolution: "@auto-it/conventional-commits@npm:11.3.6"
   dependencies:
-    "@auto-it/core": "npm:11.3.0"
+    "@auto-it/core": "npm:11.3.6"
     array.prototype.flatmap: "npm:^1.2.2"
     conventional-changelog-core: "npm:^4.2.0"
     conventional-changelog-preset-loader: "npm:^2.3.4"
@@ -44,7 +44,7 @@ __metadata:
     fp-ts: "npm:^2.5.3"
     io-ts: "npm:^2.1.2"
     tslib: "npm:2.1.0"
-  checksum: 10c0/4a4a100a4a70771ac8a2cb54c1bca1e7caa5e60b54b1aa29a2600c6936876ad72e10ceb2c41bf5c4e64e9a2c67ae669e39aa41704b36f69f65a3fd5ccdd352b4
+  checksum: 10c0/8250dcc5779e07ac3e1e578dbdedaf13020ee81d075645a39cf19dcdd410849401d12df54f15347315e77ebb7330a1eb8685ea4a35047fb0e79b66ab5eca6199
   languageName: node
   linkType: hard
 

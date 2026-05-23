@@ -23,7 +23,7 @@ export default function withAlternateAppIcons(
   generateTypeIconsFile(iconNames);
 
   config = withAlternateAppIconsGenerator(config, alternateIcons);
-  config = withXcodeProjectUpdate(config, iconNames);
+  config = withXcodeProjectUpdate(config, alternateIcons);
   config = withAdaptiveIconsGenerator(config, alternateIcons);
   config = withAndroidManifestUpdate(config, iconNames);
 

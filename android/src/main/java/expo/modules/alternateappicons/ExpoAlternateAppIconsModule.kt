@@ -9,6 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 const val MAIN_ACTIVITY_NAME = "MainActivity"
+const val DEFAULT_ALIAS_NAME = "MainActivityDefault"
 
 class ExpoAlternateAppIconsModule : Module() {
   override fun definition() = ModuleDefinition {
@@ -23,50 +24,86 @@ class ExpoAlternateAppIconsModule : Module() {
   }
 
   private fun getAppIconName(): String? {
-    val currentActivityComponent = appContext.activityProvider?.currentActivity?.componentName ?: return null
+    val pm = appContext.reactContext?.packageManager ?: return null
+    val packageName = appContext.reactContext?.packageName ?: return null
 
-    return try {
-      retrieveIconNameFromComponent(currentActivityComponent)
-    } catch (error: PackageManager.NameNotFoundException) {
-      null
+    try {
+      // Query all activities to find the currently enabled one
+      // Current activity will be MainActivity if opened from deep-link/shortcuts, is not reflect current app icon
+      val packageInfo = pm.getPackageInfo(
+        packageName, 
+        PackageManager.GET_ACTIVITIES or PackageManager.GET_DISABLED_COMPONENTS
+      )
+      
+      packageInfo.activities?.forEach { activityInfo ->
+        val name = activityInfo.name.split('.').last()
+        
+        // Skip the base MainActivity (always enabled)
+        if (name == MAIN_ACTIVITY_NAME) return@forEach
+        
+        if (name.startsWith(MAIN_ACTIVITY_NAME)) {
+          val componentName = ComponentName(packageName, activityInfo.name)
+          val state = pm.getComponentEnabledSetting(componentName)
+          
+          if (state == PackageManager.COMPONENT_ENABLED_STATE_ENABLED) {
+            if (name == DEFAULT_ALIAS_NAME) return null
+            return name.substring(MAIN_ACTIVITY_NAME.length)
+          } else if (name == DEFAULT_ALIAS_NAME && state == PackageManager.COMPONENT_ENABLED_STATE_DEFAULT) {
+            // Default alias is implicitly enabled at first
+            return null
+          }
+        }
+      }
+    } catch (e: Exception) {
+      e.printStackTrace()
     }
+    return null
   }
 
   private suspend fun setAlternateAppIcon(icon: String?): String? = withContext(Dispatchers.Main) {
-    val currentActivityComponent = appContext.activityProvider!!.currentActivity!!.componentName
+    val pm = appContext.reactContext?.packageManager ?: return@withContext icon
+    val packageName = appContext.reactContext?.packageName ?: return@withContext icon
 
-    val currentIconName = retrieveIconNameFromComponent(currentActivityComponent)
-
-    if (currentIconName == icon) return@withContext icon
-
-    val newActivityComponent = replaceMainActivitySimpleName(currentActivityComponent, icon)
-
-    appContext.reactContext?.packageManager?.run {
-      setComponentEnabledSetting(newActivityComponent, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP)
-      setComponentEnabledSetting(currentActivityComponent, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP)
+    // Map null to "Default", targets MainActivityDefault
+    val targetAliasName = if (icon == null || icon == "Default") {
+      DEFAULT_ALIAS_NAME
+    } else {
+      "$MAIN_ACTIVITY_NAME$icon"
     }
 
-    return@withContext icon
-  }
+    try {
+      val packageInfo = pm.getPackageInfo(
+        packageName, 
+        PackageManager.GET_ACTIVITIES or PackageManager.GET_DISABLED_COMPONENTS
+      )
+      
+      packageInfo.activities?.forEach { activityInfo ->
+        val name = activityInfo.name.split('.').last()
+        
+        // Never disable MainActivity
+        if (name == MAIN_ACTIVITY_NAME) return@forEach
+        
+        val componentName = ComponentName(packageName, activityInfo.name)
 
-  private fun getSimpleName(component: ComponentName): String = component.className.split('.').last()
-
-  private fun retrieveIconNameFromComponent(component: ComponentName): String? =
-    with(getSimpleName(component)) {
-      when  {
-        equals(MAIN_ACTIVITY_NAME) -> null
-        startsWith(MAIN_ACTIVITY_NAME) -> substring(MAIN_ACTIVITY_NAME.length)
-        else -> null
+        // Enable the target, disable all other aliases
+        if (name == targetAliasName) {
+          pm.setComponentEnabledSetting(
+            componentName,
+            PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+            PackageManager.DONT_KILL_APP
+          )
+        } else if (name.startsWith(MAIN_ACTIVITY_NAME)) {
+          pm.setComponentEnabledSetting(
+            componentName,
+            PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+            PackageManager.DONT_KILL_APP
+          )
+        }
       }
+    } catch (e: Exception) {
+      e.printStackTrace()
     }
 
-  private fun replaceMainActivitySimpleName(component: ComponentName, suffix: String?): ComponentName {
-    val newActivitySimpleName = "$MAIN_ACTIVITY_NAME${suffix ?: ""}"
-    val identifiers = component.className.split('.').toMutableList()
-    identifiers[identifiers.size - 1] = newActivitySimpleName
-    val packageName = component.packageName
-    val newActivityName = identifiers.joinToString(".")
-    return ComponentName(packageName, newActivityName)
+    return@withContext if (icon == "Default") null else icon
   }
-
 }

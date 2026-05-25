@@ -39,6 +39,9 @@ export function withAndroidManifestUpdate(config: ExpoConfig, alternateIconNames
 
     // Add alternate aliases (alternate app icons)
     for (const name of alternateIconNames) {
+      if (toPascalCase(name) === 'Default') {
+        throw new Error('Alternate icon name "Default" is reserved.');
+      }
       addActivityAliasToMainApplication(mainApplication, name, intentFilters, false);
     }
 

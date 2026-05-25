@@ -77,7 +77,20 @@ class ExpoAlternateAppIconsModule : Module() {
         PackageManager.GET_ACTIVITIES or PackageManager.GET_DISABLED_COMPONENTS
       )
       
-      packageInfo.activities?.forEach { activityInfo ->
+      // Prevent unknown icon failures
+      val aliasActivities = packageInfo.activities?.filter { activityInfo ->
+        val name = activityInfo.name.split('.').last()
+        name != MAIN_ACTIVITY_NAME && name.startsWith(MAIN_ACTIVITY_NAME)
+      }
+      .orEmpty()
+      val targetExists = aliasActivities.any {
+        it.name.split('.').last() == targetAliasName
+      }
+      if (!targetExists) {
+        throw IllegalArgumentException("Unknown app icon alias: $icon")
+      }
+
+      aliasActivities.forEach { activityInfo ->
         val name = activityInfo.name.split('.').last()
         
         // Never disable MainActivity
@@ -106,4 +119,5 @@ class ExpoAlternateAppIconsModule : Module() {
 
     return@withContext if (icon == "Default") null else icon
   }
+
 }

@@ -1,4 +1,4 @@
-import { IOSConfig } from 'expo/config-plugins';
+import { IOSConfig, WarningAggregator } from 'expo/config-plugins';
 import { cp } from 'fs/promises';
 import { join } from 'path';
 
@@ -14,6 +14,9 @@ export async function addLiquidGlassIcon(
   try {
     await cp(iconPath, appIconPath, { recursive: true });
   } catch (error) {
-    console.log(error);
+    WarningAggregator.addWarningIOS(
+      'expo-alternate-app-icons',
+      `Failed to copy liquid glass icon "${name}": ${error}`,
+    );
   }
 }

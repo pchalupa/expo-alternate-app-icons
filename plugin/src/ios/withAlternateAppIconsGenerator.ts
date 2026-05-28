@@ -1,6 +1,8 @@
 import { type ExpoConfig } from '@expo/config-types';
 import { withDangerousMod } from 'expo/config-plugins';
+import { extname } from 'path';
 
+import { addLiquidGlassIcon } from './addLiquidGlassIcon';
 import { generateUniversalIcon, generateUniversalVariantsIcon } from './generateUniversalIcon';
 import { type AlternateIcon } from '../types';
 import { isIosVariantsIcon } from '../utils';
@@ -18,10 +20,14 @@ export function withAlternateAppIconsGenerator(
         const projectRoot = config.modRequest.projectRoot;
 
         if (typeof iconPath === 'string') {
-          await generateUniversalIcon(name, projectRoot, iconPath, {
-            width: 1024,
-            height: 1024,
-          });
+          if (extname(iconPath) === '.icon') {
+            await addLiquidGlassIcon(name, projectRoot, iconPath);
+          } else {
+            await generateUniversalIcon(name, projectRoot, iconPath, {
+              width: 1024,
+              height: 1024,
+            });
+          }
         } else if (isIosVariantsIcon(iconPath)) {
           await generateUniversalVariantsIcon(name, projectRoot, iconPath, {
             width: 1024,

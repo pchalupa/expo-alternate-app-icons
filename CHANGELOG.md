@@ -1,3 +1,21 @@
+# 11.0.0 (Thu Oct 29 2026)
+
+#### 💥 Breaking Change
+
+- chore(deps): bump actions/checkout from 6 to 7 [#275](https://github.com/pchalupa/expo-alternate-app-icons/pull/275) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+- chore(deps): bump actions/setup-node from 6 to 7 [#276](https://github.com/pchalupa/expo-alternate-app-icons/pull/276) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@pchalupa](https://github.com/pchalupa))
+
+#### 🚀 Enhancement
+
+- chore(deps): bump the npm_and_yarn group across 1 directory with 15 updates [#280](https://github.com/pchalupa/expo-alternate-app-icons/pull/280) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Petr Chalupa ([@pchalupa](https://github.com/pchalupa))
+
+---
+
 # 3.0.0 (Thu Oct 29 2026)
 
 #### 💥 Breaking Change

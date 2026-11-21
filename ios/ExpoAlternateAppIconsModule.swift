@@ -1,14 +1,12 @@
 import ExpoModulesCore
 
 public class ExpoAlternateAppIconsModule: Module {
-    private var supportsAlternateIcons = UIApplication.shared.supportsAlternateIcons;
-
     public func definition() -> ModuleDefinition {
         Name("ExpoAlternateAppIcons")
 
         Constants({
           return [
-            "supportsAlternateIcons": self.supportsAlternateIcons
+            "supportsAlternateIcons": self.readOnMainThread { UIApplication.shared.supportsAlternateIcons }
           ]
         })
 
@@ -17,7 +15,7 @@ public class ExpoAlternateAppIconsModule: Module {
     }
 
     private func getAppIconName() -> String? {
-        return UIApplication.shared.alternateIconName;
+        return readOnMainThread { UIApplication.shared.alternateIconName }
     }
 
     private func setAlternateAppIcon(icon: String?, promise: Promise) -> Void {
@@ -30,5 +28,14 @@ public class ExpoAlternateAppIconsModule: Module {
                 promise.reject(error);
             }
         }
+    }
+
+    // Constants and synchronous functions run on the JS thread, but UIApplication
+    // may only be read on the main thread.
+    private func readOnMainThread<T: Sendable>(_ read: @MainActor () -> T) -> T {
+        if Thread.isMainThread {
+            return MainActor.assumeIsolated(read)
+        }
+        return DispatchQueue.main.sync(execute: read)
     }
 }
